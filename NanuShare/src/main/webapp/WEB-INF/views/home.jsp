@@ -18,18 +18,39 @@
 <body>
 <div data-role="page">
 <div data-role="header">
+<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1>Nanushare</h1>
+<a href="#" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+</div>
+<div data-role="panel" id="myMenu">
+	<p>이것은 그냥 한번 넣어본것이다 </p>
 </div>
 <div data-role="content">
-<h1>Content</h1>
-<h1>let it go</h1>
-<h1>let it go2</h1>
+<div>
+<input type="search" name="search" id="search">
+</div>
 <div class="container">
-  <div class="btn-group btn-group-xs">
-    <button type="button" class="btn btn-primary">Apple</button>
-    <button type="button" class="btn btn-primary">Samsung</button>
-    <button type="button" class="btn btn-primary">Sony</button>
-  </div>
+<div class="ui-grid-b">
+      <div class="ui-block-a"> 
+        <a href="#" class="ui-btn ui-corner-all ui-shadow">나눔하기</a><br>
+      </div>
+      <div class="ui-block-b">
+	       <form method="post" action="demoform.asp">
+		  <fieldset class="ui-field-contain">
+		    <select name="prod-catagory" id="catagory">
+		      <option value="0">카테고리</option>
+		      <option value="1">의류</option>
+		      <option value="2">가구</option>
+		      <option value="3">도서</option>
+		    </select>
+		  </fieldset>
+		</form>
+      </div>
+      <div class="ui-block-c">
+        <a href="#" class="ui-btn ui-corner-all ui-shadow">후기게시판</a><br>        
+      </div>
+</div>
+  
 </div>
 </div>
 <div data-role="footer">
