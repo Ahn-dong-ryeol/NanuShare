@@ -21,12 +21,12 @@
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 
-<div data-role="panel" id="myMenu">
+<div data-role="panel" id="myMenu" data-display="overlay">
 	<p>마이페이지 등등이 들어가는 곳입니다.</p>
 	<a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>관리자님
 </div>
 
-<div data-role="panel" id="info" data-position="right">
+<div data-role="panel" id="info" data-position="right"  data-display="overlay">
 	<p>알림과 나누톡이 들어가는 곳입니다. </p>
 </div>
 
@@ -52,6 +52,15 @@
       <div class="ui-block-c">
         <a href="join.jsp" class="ui-btn ui-corner-all ui-shadow">후기게시판</a><br>        
       </div>
+      <div class="ui-block-a" id="ad-banner">
+      	<img alt="" src="../images/sample_banner.JPG">
+      </div>
+      <div class="ui-block-a">
+      <h2>최근 나눔 목록</h2>
+      </div>
+      <div class="ui-block-a"></div>
+      <div class="ui-block-b"></div>
+      <div class="ui-block-c"></div>
 </div><!-- 버튼끝 -->
 </div><!-- container끝 -->
 </div><!-- content끝 -->
@@ -59,7 +68,7 @@
 회사 : ㈜나누셰어<br>
 주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
 대표자 이름 : 염지연<br>
-회사운영방침 | FAQ | 회사소개 | Q@A
+회사운영방침 | FAQ | 회사소개 | Q&A
 </div><!-- footer끝 -->
 </div><!-- page끝 -->
 </body>
