@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false" %>
 <html>
 <head>
@@ -11,24 +12,26 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div data-role="page">
 <div data-role="header">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1>Nanushare</h1>
-<a href="#" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
-</div>
+<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+</div><!-- header끝 -->
+
 <div data-role="panel" id="myMenu">
-	<p>이것은 그냥 한번 넣어본것이다 </p>
+	<p>마이페이지 등등이 들어가는 곳입니다.</p>
+	<a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>관리자님
 </div>
+
+<div data-role="panel" id="info" data-position="right">
+	<p>알림과 나누톡이 들어가는 곳입니다. </p>
+</div>
+
 <div data-role="content">
-<div>
-<input type="search" name="search" id="search">
-</div>
+<input type="search" name="search" id="search"> <!-- 검색 -->
 <div class="container">
 <div class="ui-grid-b">
       <div class="ui-block-a"> 
@@ -47,18 +50,17 @@
 		</form>
       </div>
       <div class="ui-block-c">
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">후기게시판</a><br>        
+        <a href="join.jsp" class="ui-btn ui-corner-all ui-shadow">후기게시판</a><br>        
       </div>
-</div>
-  
-</div>
-</div>
+</div><!-- 버튼끝 -->
+</div><!-- container끝 -->
+</div><!-- content끝 -->
 <div data-role="footer">
 회사 : ㈜나누셰어<br>
 주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
 대표자 이름 : 염지연<br>
-회사운영방침|FAQ|회사소개|Q@A
-</div>
-</div>
+회사운영방침 | FAQ | 회사소개 | Q@A
+</div><!-- footer끝 -->
+</div><!-- page끝 -->
 </body>
 </html>
