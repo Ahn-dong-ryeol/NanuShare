@@ -33,11 +33,15 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "join";
+		return "home";
 	}
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String ex(){
 		return "join";
+	}
+	@RequestMapping(value = "/nanum", method = RequestMethod.GET)
+	public String ex1(){
+		return "nanum";
 	}
 	
 }

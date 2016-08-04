@@ -180,19 +180,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/resources/images/sample.jpg" alt="Chania" width="460" height="345">
+        <img src="./resources/images/sample.jpg" alt="Chania" width="460" height="345">
       </div>
 
       <div class="item">
-        <img src="../resources/images/sample.jpg" alt="Chania" width="460" height="345">
+        <img src="./resources/images/sample.jpg" alt="Chania" width="460" height="345">
       </div>
     
       <div class="item">
-        <img src="/NanuShare/src/main/webapp/resources/images/sample.jpg" alt="Flower" width="460" height="345">
+        <img src="./resources/images/sample.jpg" alt="Flower" width="460" height="345">
       </div>
 
       <div class="item">
-        <img src="../resources/images/sample.jpg" alt="Flower" width="460" height="345">
+        <img src="./resources/images/sample.jpg" alt="Flower" width="460" height="345">
       </div>
     </div>
 

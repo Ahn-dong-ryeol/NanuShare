@@ -30,5 +30,14 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>*.html</url-pattern>
+	</servlet-mapping> 
 
 </web-app>
