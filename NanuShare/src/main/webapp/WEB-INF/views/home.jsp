@@ -39,7 +39,6 @@
 </div><!-- header끝 -->
 
 <div data-role="panel" id="myMenu" data-display="overlay">
-	<div class="container">
 	<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">로그인</a>
 
     <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
@@ -99,15 +98,14 @@
 	<hr>
 	<div class="ui-grid-solo">
       <div class="ui-block-a">
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">회원정보 수정</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">공지사항</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">운영정책</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">자주묻는질문</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">1:1질문</a>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">신고하기</a>
+        <a href="#">회원정보 수정</a><hr>
+        <a href="#" >공지사항</a><hr>
+        <a href="#" >운영정책</a><hr>
+        <a href="#" >자주묻는질문</a><hr>
+        <a href="#" >1:1질문</a><hr>
+        <a href="#" >신고하기</a>
       </div>
     </div><!-- grid 끝 -->
-	</div><!-- container 끝 -->
 </div>
 
 <div data-role="panel" id="info" data-position="right"  data-display="overlay">
@@ -119,7 +117,7 @@
 <div class="container">
 <div class="ui-grid-b">
       <div class="ui-block-a"> 
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">나눔하기</a><br>
+        <a href="nanum" class="ui-btn ui-corner-all ui-shadow">나눔하기</a><br>
       </div>
       <div class="ui-block-b">
 	       <form method="post" action="demoform.asp">
