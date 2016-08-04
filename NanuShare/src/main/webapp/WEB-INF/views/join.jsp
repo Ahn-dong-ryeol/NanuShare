@@ -15,6 +15,83 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    function execDaumPostcode1() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+                
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('postcode1').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('address1').value = fullAddr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('detail_address1').focus();
+            }
+        }).open();
+    }
+    
+    function execDaumPostcode2() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+                
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('postcode2').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('address2').value = fullAddr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('detail_address2').focus();
+            }
+        }).open();
+    }
+</script>
+
 <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -195,6 +272,7 @@
         </tr>
 </table>
 <br/>
+
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">주소 1</a></li>
     <li><a data-toggle="tab" href="#menu1">주소 2</a></li>
@@ -205,16 +283,16 @@
       <table width="100%">
       <tr>
       <td align="center">우편번호</td>
-      <td><input type="text" name="pw"placeholder=""/></td>
-      <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">검색</a></td>
+      <td><input type="text" id="postcode1" placeholder=""></td>
+      <td align="center"><input type="button" onclick="execDaumPostcode1()" value="검색"><br></td>
       </tr>
       <tr>
       <td align="center">주소</td>
-      <td colspan="2"><input type="text" name="pw"placeholder=""/></td>
+      <td colspan="2"><input type="text" id="address1" placeholder=""></td>
       </tr>
        <tr>
       <td align="center">상세주소</td>
-      <td colspan="2"><input type="text" name="pw"placeholder=""/></td>
+      <td colspan="2"><input type="text" id="detail_address1" placeholder=""></td>
       </tr>
       </table>
       </div>
@@ -222,16 +300,16 @@
       <table width="100%">
       <tr>
       <td align="center">우편번호</td>
-      <td><input type="text" name="pw"placeholder=""/></td>
-      <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">검색</a></td>
+      <td><input type="text" id="postcode2" placeholder=""></td>
+      <td align="center"><input type="button" onclick="execDaumPostcode2()" value="검색"><br></td>
       </tr>
       <tr>
       <td align="center">주소</td>
-      <td colspan="2"><input type="text" name="pw"placeholder=""/></td>
+      <td colspan="2"><input type="text" id="address2" placeholder=""></td>
       </tr>
        <tr>
       <td align="center">상세주소</td>
-      <td colspan="2"><input type="text" name="pw"placeholder=""/></td>
+      <td colspan="2"><input type="text" id="detail_address2" placeholder=""></td>
       </tr>
       </table>
     </div>
