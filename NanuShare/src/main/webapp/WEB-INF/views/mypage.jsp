@@ -100,9 +100,8 @@
 }
   </style>
 </head>
-
 <body>
-<div data-role="page" id="join1">
+<div data-role="page" id="mypage1">
 <div data-role="header"  data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1>Nanushare</h1>
@@ -136,39 +135,66 @@
 </div><!-- 오른쪽 panel끝 -->
 
 <div data-role="content">
-<h3>회원가입</h3>
-      <label><input type="checkbox" value="">전체 약관 동의</label>
-    <hr>
-    
-    <table width="100%">
-	<tr><td><label><input type="checkbox" value="">서비스 이용약관 동의</label></td>
-      <td align="center"> | 내용</td></tr>
-      <tr><td><label><input type="checkbox" value="">위치정보 이용약관 동의</label></td>
-      <td align="center"> | 내용</td></tr>
-      <tr><td><label><input type="checkbox" value="">개인정보 취급 약관 동의</label></td>
-      <td align="center"> | 내용</td></tr>
-      <tr><td><label><input type="checkbox" value="">개인정보 취급 위탁 동의(선택)</label></td>
-      <td align="center"> | 내용</td></tr>
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#mypage1" class="ui-btn-active ui-state-persist">마이페이지</a></li>
+        <li><a href="#mypage2">바드미내역</a></li>
+        <li><a href="#mypage3">나누미내역</a></li>
+        <li><a href="#mypage4">회원정보수정</a></li>
+      </ul>
+    </div>
+
+  <div data-role="main" class="ui-content">
+   <table width="100%" border="1">
+		<tr>
+         <td rowspan="2" align="center"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>??님</td>
+         <td align="center">나눔포인트</td>
+         <td>500P
+        </tr>
+        <tr>
+         <td colspan="2" align="center">나눔 신뢰도<br>별별별별별</td>
+        </tr>
+        </table>
+        
+   <ul data-role="listview" data-inset="true">
+      <li data-role="divider"><a href="#">최근 나누미내역</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">책 나눔합니다! 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>4/7명 신청함</td>
+      </tr>
       </table>
+      </li>
       
-  <table width="100%">
-  <tr>
-  <td width="50%">
-  <a href="#join2"><button type="button" class="btn btn-primary btn-lg btn-block">동의</button></a></td>
-  <td width="50%">
-  <button type="button" class="btn btn-default btn-lg btn-block">동의하지 않음</button></td></tr>
-  		</table>
-</div><!-- content끝 -->
+      <li data-role="divider"><a href="#">최근 바드미내역</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">의자 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>상태 : 나 눔 진 행 중</td>
+      </tr>
+      </table>
+      </li>
+    </ul>
+  </div><!-- main끝  -->
+</div><!-- content 끝 -->
 <div data-role="footer" align="center">
 회사 : ㈜나누셰어<br>
 주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
 대표자 이름 : 염지연<br>
 회사운영방침 | FAQ | 회사소개 | Q&A
 </div><!-- footer끝 -->
-</div><!-- join1 page끝 -->
+</div><!-- mypage1 끝 -->
 
-<div data-role="page" id="join2">
-<div data-role="header" data-theme="f">
+<div data-role="page" id="mypage2">
+<div data-role="header"  data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1>Nanushare</h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
@@ -201,21 +227,223 @@
 </div><!-- 오른쪽 panel끝 -->
 
 <div data-role="content">
-<h3>회원가입</h3>
-<table width="100%">
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#mypage1">마이페이지</a></li>
+        <li><a href="#mypage2" class="ui-btn-active ui-state-persist">바드미내역</a></li>
+        <li><a href="#mypage3">나누미내역</a></li>
+        <li><a href="#mypage4">회원정보수정</a></li>
+      </ul>
+    </div>
+
+  <div data-role="main" class="ui-content">
+        <h4 align="center">전체 > 진행중 > 나눔마감 > 배송중 > 배송완료</h4>
+   <ul data-role="listview" data-inset="true">
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">책 나눔합니다! 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>배 송 중</td>
+      </tr>
+      </table>
+      </li>
+      
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">의자 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>나 눔 진 행 중</td>
+      </tr>
+      </table>
+      </li>
+      
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">의자 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>나 눔 진 행 중</td>
+      </tr>
+      </table>
+      </li>
+    </ul>
+  </div><!-- main끝  -->
+</div><!-- content 끝 -->
+<div data-role="footer" align="center">
+회사 : ㈜나누셰어<br>
+주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
+대표자 이름 : 염지연<br>
+회사운영방침 | FAQ | 회사소개 | Q&A
+</div><!-- footer끝 -->
+</div><!-- mypage2 끝 -->
+
+<div data-role="page" id="mypage3">
+<div data-role="header"  data-theme="f">
+<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1>Nanushare</h1>
+<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+</div><!-- header끝 -->
+
+<div data-role="panel" id="myMenu" data-display="overlay">
+	<p>마이페이지 등등이 들어가는 곳입니다.</p>
+	<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+	<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">로그인</a>
+
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+      <form method="post" action="demoform.asp">
+        <div>
+          <h3>로그인</h3>
+          <input type="text" name="user" id="usrnm" placeholder="아이디">
+          <input type="password" name="passw" id="pswd" placeholder="비밀번호">
+          <label for="log">자동 로그인</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <a href="#">아이디 찾기</a>
+          <a href="#">비밀번호 찾기</a><br>
+          <input type="submit" data-inline="true" value="로그인">
+          <input type="submit" data-inline="true" value="회원가입">
+        </div><!-- 로그인 끝 -->
+      </form>
+    </div><!-- 팝업끝 -->
+</div><!-- 왼쪽 panel끝 -->
+
+<div data-role="panel" id="info" data-position="right">
+	<p>알림과 나누톡이 들어가는 곳입니다. </p>
+</div><!-- 오른쪽 panel끝 -->
+
+<div data-role="content">
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#mypage1">마이페이지</a></li>
+        <li><a href="#mypage2">바드미내역</a></li>
+        <li><a href="#mypage3" class="ui-btn-active ui-state-persist">나누미내역</a></li>
+        <li><a href="#mypage4">회원정보수정</a></li>
+      </ul>
+    </div>
+
+  <div data-role="main" class="ui-content">
+        <h4 align="center">전체 > 진행중 > 나눔마감 > 배송중 > 배송완료</h4>
+   <ul data-role="listview" data-inset="true">
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">책 나눔합니다! 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>4 / 7 신 청 함</td>
+      </tr>
+      </table>
+      </li>
+      
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">의자 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>배 송 완 료</td>
+      </tr>
+      </table>
+      </li>
+      
+      <li data-role="divider"><a href="#">상세보기</a></li>
+      <li>
+      <table>
+      <tr>
+      <td rowspan="2" align="center"><a href="#"><img src="./resources/images/sample.jpg" width="100px" height="100px"></a></td>
+      <td><a href="#">의자 가져가세요</a></td>
+      </tr>
+      <tr>
+      <td>배 송 중</td>
+      </tr>
+      </table>
+      </li>
+    </ul>
+  </div><!-- main끝  -->
+</div><!-- content 끝 -->
+<div data-role="footer" align="center">
+회사 : ㈜나누셰어<br>
+주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
+대표자 이름 : 염지연<br>
+회사운영방침 | FAQ | 회사소개 | Q&A
+</div><!-- footer끝 -->
+</div><!-- mypage3 끝 -->
+
+<div data-role="page" id="mypage4">
+<div data-role="header"  data-theme="f">
+<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1>Nanushare</h1>
+<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+</div><!-- header끝 -->
+
+<div data-role="panel" id="myMenu" data-display="overlay">
+	<p>마이페이지 등등이 들어가는 곳입니다.</p>
+	<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+	<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">로그인</a>
+
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+      <form method="post" action="demoform.asp">
+        <div>
+          <h3>로그인</h3>
+          <input type="text" name="user" id="usrnm" placeholder="아이디">
+          <input type="password" name="passw" id="pswd" placeholder="비밀번호">
+          <label for="log">자동 로그인</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <a href="#">아이디 찾기</a>
+          <a href="#">비밀번호 찾기</a><br>
+          <input type="submit" data-inline="true" value="로그인">
+          <input type="submit" data-inline="true" value="회원가입">
+        </div><!-- 로그인 끝 -->
+      </form>
+    </div><!-- 팝업끝 -->
+</div><!-- 왼쪽 panel끝 -->
+
+<div data-role="panel" id="info" data-position="right">
+	<p>알림과 나누톡이 들어가는 곳입니다. </p>
+</div><!-- 오른쪽 panel끝 -->
+
+<div data-role="content">
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#mypage1">마이페이지</a></li>
+        <li><a href="#mypage2">바드미내역</a></li>
+        <li><a href="#mypage3">나누미내역</a></li>
+        <li><a href="#mypage4" class="ui-btn-active ui-state-persist">회원정보수정</a></li>
+      </ul>
+    </div>
+
+  <div data-role="main" class="ui-content">
+       <table width="100%">
 <tr>
          <td rowspan="2"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a></th>
          <td align="center">아이디</td>
-         <td colspan="2"><input type="text" id="id" name="id" placeholder="아이디 입력"/></td>
-         <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-btn-b ui-corner-all">중복확인</a></td>
+         <td colspan="3">awsert</td>
         </tr>
         <tr>
         <td align="center">닉네임</td>
-        <td colspan="2"><input type="text" id="nickname" name="nickname"placeholder="닉네임 입력"/></td>
+        <td colspan="2"><input type="text" id="nickname" name="nickname"placeholder="니익네임"/></td>
 		<td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-btn-b ui-corner-all">중복확인</a></td>
         </tr>
         <tr>
         <td colspan="2" align="center">현재비밀번호</td>
+        <td colspan="3"><input type="text" name="pw"placeholder="비밀번호 입력"/></td>
+        </tr>
+        <tr>
+        <td colspan="2" align="center">변경비밀번호</td>
         <td colspan="3"><input type="text" name="pw"placeholder="비밀번호 입력"/></td>
         </tr>
         <tr>
@@ -254,16 +482,11 @@
         </tr>
          <tr>
         <td colspan="2" align="center">연락처</td>
-        <td colspan="2"><input type="text" name="pw"placeholder="연락처 입력"/></td>
-        <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">본인인증</a></td>
-        </tr>
-        <td colspan="2" align="center">인증번호</td>
-        <td colspan="2"><input type="text" name="pw"placeholder="인증번호 입력"/></td>
-        <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">확인</a></td>
-        </tr>
+        <td colspan="2"><input type="text" name="pw"placeholder="010101010"/></td>
+        <td></td>
         <tr>
         <td colspan="2" align="center">카카오톡ID</td>
-        <td colspan="3"><input type="text" name="pwcheck"placeholder="카카오톡ID 입력"/></td>
+        <td colspan="3"><input type="text" name="pwcheck"placeholder="sseokyu"/></td>
         </tr>
 </table>
 <br/>
@@ -278,16 +501,16 @@
       <table width="100%">
       <tr>
       <td align="center">우편번호</td>
-      <td><input type="text" id="postcode1" placeholder=""></td>
-      <td align="center"><input type="button" onclick="execDaumPostcode1()" value="검색"><br></td>
+      <td><input type="text" id="postcode1" placeholder="60985"></td>
+      <td align="center"><input type="button" onclick="execDaumPostcode1()" value="검색" ><br></td>
       </tr>
       <tr>
       <td align="center">주소</td>
-      <td colspan="2"><input type="text" id="address1" placeholder=""></td>
+      <td colspan="2"><input type="text" id="address1" placeholder="부산시 금정구"></td>
       </tr>
        <tr>
       <td align="center">상세주소</td>
-      <td colspan="2"><input type="text" id="detail_address1" placeholder=""></td>
+      <td colspan="2"><input type="text" id="detail_address1" placeholder="33호"></td>
       </tr>
       </table>
       </div>
@@ -309,69 +532,34 @@
       </table>
     </div>
   </div>
-<a href=#join3><input type="submit" value="회원가입" data-role="button" data-iconpos="bottom"></a>
-
-</div><!-- content끝 -->
+  <a href="#memleaveDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">회원탈퇴</a>
+  <a href=#join3><input type="submit" value="수정완료" data-role="button" data-iconpos="bottom"></a>
+  
+<div data-role="popup" id="memleaveDialog">
+      <div data-role="main" class="ui-content">
+        <h3>회원 탈퇴 사유를 작성해 주세요.</h3>
+        <p>탈퇴 사유 선택</p>
+        <select>
+        <option>탈퇴 사유</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+        <p>탈퇴 사유 작성</p>
+        <input type="text" placeholder=""/>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">취소</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-check ui-btn-icon-left">확인</a>
+      </div>
+</div>
+      
+  </div><!-- main끝  -->
+</div><!-- content 끝 -->
 <div data-role="footer" align="center">
 회사 : ㈜나누셰어<br>
 주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
 대표자 이름 : 염지연<br>
 회사운영방침 | FAQ | 회사소개 | Q&A
 </div><!-- footer끝 -->
-</div><!-- join2 page끝 -->
-
-<div data-role="page" id="join3">
-<div data-role="header"  data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1>Nanushare</h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
-</div><!-- header끝 -->
-
-<div data-role="panel" id="myMenu" data-display="overlay">
-	<p>마이페이지 등등이 들어가는 곳입니다.</p>
-	<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-	<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">로그인</a>
-
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" action="demoform.asp">
-        <div>
-          <h3>로그인</h3>
-          <input type="text" name="user" id="usrnm" placeholder="아이디">
-          <input type="password" name="passw" id="pswd" placeholder="비밀번호">
-          <label for="log">자동 로그인</label>
-          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-          <a href="#">아이디 찾기</a>
-          <a href="#">비밀번호 찾기</a><br>
-          <input type="submit" data-inline="true" value="로그인">
-          <input type="submit" data-inline="true" value="회원가입">
-        </div><!-- 로그인 끝 -->
-      </form>
-    </div><!-- 팝업끝 -->
-</div><!-- 왼쪽 panel끝 -->
-
-<div data-role="panel" id="info" data-position="right">
-	<p>알림과 나누톡이 들어가는 곳입니다. </p>
-</div><!-- 오른쪽 panel끝 -->
-
-<div data-role="content">
-<h3>회원가입을 축하합니다!</h3>
-<h4>로그인해주세요.</h3>
-    <hr>
-      <input type="text" name="user" id="usrnm" placeholder="아이디">
-          <input type="password" name="passw" id="pswd" placeholder="비밀번호">
-          <label><input type="checkbox" value="1">자동로그인</label>
-          <a href="#">아이디 찾기</a>
-          <a href="#">비밀번호 찾기</a><br>
-  <a href="#join2"><button type="button" class="btn btn-primary btn-lg btn-block">로그인</button></a>
-</div><!-- content끝 -->
-<div data-role="footer" align="center">
-회사 : ㈜나누셰어<br>
-주소 : 부산광역시 서구 부민동 동아대학교 부민캠퍼스 국제관 스터디룸 9-B<br>
-대표자 이름 : 염지연<br>
-회사운영방침 | FAQ | 회사소개 | Q&A
-</div><!-- footer끝 -->
-</div><!-- join3 page끝 -->
-
+</div><!-- mypage4 끝 -->
 </body>
 </html>
-

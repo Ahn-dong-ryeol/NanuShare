@@ -43,5 +43,8 @@ public class HomeController {
 	public String ex1(){
 		return "nanum";
 	}
-	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public String ex2(){
+		return "mypage";
+	}
 }
