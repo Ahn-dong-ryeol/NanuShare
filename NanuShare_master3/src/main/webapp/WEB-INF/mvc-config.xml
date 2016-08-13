@@ -19,8 +19,7 @@
 	<context:component-scan base-package="com.nanushare.springproject.controller" />
 
     <mvc:annotation-driven />
-    
-     <mvc:resources location="/resources/" mapping="/resources/**"/>
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
@@ -28,6 +27,5 @@
 	        <property name="suffix" value=".jsp"/>
 	        <property name="contentType" value="text/html; charset=UTF-8"/>
 	</bean>
-
-
+	
 </beans>

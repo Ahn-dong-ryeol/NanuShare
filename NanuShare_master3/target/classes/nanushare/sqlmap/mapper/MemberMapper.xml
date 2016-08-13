@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="mem_grade" property="memGrade"/>
 		<result column="nickname" property="nickname"/>
 		<result column="mem_gender" property="memGender"/>
-		<result column="mem_brithdate" property="memBrithdate" javaType="java.sql.Date" />
+		<result column="mem_brithdate" property="memBrithdate"/>
 		<result column="mem_pw" property="memPw"/>
 		<result column="mem_mobile_number" property="memMobileNumber"/>
 		<result column="mem_kakao_id" property="memKakaoId"/>
@@ -17,37 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="mem_address_1" property="memAddress1"/>
 		<result column="mem_postcode_2" property="memPostcode2"/>
 		<result column="mem_address_2" property="memAddress2"/>
-		<result column="mem_join_date" property="memJoinDate" javaType="java.sql.Date" />
+		<result column="mem_join_date" property="memJoinDate"/> <!-- javaType="java.sql.Date" -->
 		<result column="mem_warning_num" property="memWarningNum"/>
 		<result column="mem_banned_num" property="memBannedNum"/>
 		<result column="mem_credit_rate" property="memCreditRate"/>
 	</resultMap>
 	
-	<parameterMap type="com.nanushare.springproject.domain.member.MemberVO" id="ParamMemberMap">
-		<parameter property="memId" />
-		<parameter property="memGrade"/>
-		<parameter property="nickname"/>
-		<parameter property="memGender"/>
-		<parameter property="memBrithdate" javaType="java.sql.Date" />
-		<parameter property="memPw"/>
-		<parameter property="memMobileNumber"/>
-		<parameter property="memKakaoId"/>
-		<parameter property="memPostcode1"/>
-		<parameter property="memAddress1"/>
-		<parameter property="memPostcode2"/>
-		<parameter property="memAddress2"/>
-		<parameter property="memJoinDate" javaType="java.sql.Date" />
-		<parameter property="memWarningNum"/>
-		<parameter property="memBannedNum"/>
-		<parameter property="memCreditRate"/>
-	</parameterMap>
-	
-	<insert id="memberInsert" parameterMap="ParamMemberMap">
-		insert into MEMBER_TB(mem_id,mem_grade,nickname,mem_gender,mem_brithdate,mem_pw,
-			mem_mobile_number,mem_kakao_id,mem_postcode_1,mem_address_1,mem_postcode_2,mem_address_2,mem_join_date)
-		values (${memId},${memGrade},${nickname},${memGender},${memBrithdate},${memPw},${memMobileNumber},
-			${memKakaoId},${memPostcode1},${memAddress1},${memPostcode2},${memAddress2},${memJoinDate},
-			${memWarningNum},${memBannedNum},${memCreditRate},now())
+	<insert id="memberInsert" parameterType="com.nanushare.springproject.domain.member.MemberVO">
+		insert into MEMBER_TB values(#{memId},'일반',#{nickname},#{memGender},#{memBrithdate},#{memPw},#{memMobileNumber},#{memKakaoId},#{memPostcode1},#{memAddress1},#{memPostcode2},#{memAddress2},NOW(),0,0,0.0);
 	</insert>
 
 </mapper>

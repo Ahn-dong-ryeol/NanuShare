@@ -227,14 +227,14 @@
         <td colspan="2" align="center">성별</td>
         <td colspan="3"><fieldset data-role="controlgroup" data-type="horizontal">
 		<label for="M">남</label>
-		<input type="radio" name="memGender" id="M">
+		<input type="radio" name="memGender" id="M" value="M">
 		<label for="F">여</label>
-		<input type="radio" name="memGender" id="F">
+		<input type="radio" name="memGender" id="F" value="F">
 		</fieldset></td>
         </tr>
         <tr>
         <td colspan="2" align="center" >생년월일</td>
-        <td><input name="date" id="date" type="date" value=""></td>
+        <td><input name="memBrithdate" id="date" type="date" value=""></td>
         </tr>
          <tr>
         <td colspan="2" align="center">연락처</td>

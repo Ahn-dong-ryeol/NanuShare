@@ -34,14 +34,14 @@ public class IndexController {
 	}
 	@RequestMapping(value = "/view/join", method = RequestMethod.GET)
 	public String ex(){
-		return "join";
+		return "/view/join";
 	}
 	@RequestMapping(value = "/view/nanum", method = RequestMethod.GET)
 	public String ex1(){
-		return "view/nanum";
+		return "/view/nanum";
 	}
 	@RequestMapping(value = "/view/mypage", method = RequestMethod.GET)
 	public String ex2(){
-		return "mypage";
+		return "/view/mypage";
 	}
 }

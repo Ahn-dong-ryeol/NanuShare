@@ -7,7 +7,7 @@ public class MemberVO {
 	protected String memGrade;
 	protected String nickname;
 	protected String memGender;
-	protected Date memBrithdate;
+	protected String memBrithdate;
 	protected String birthYear;//생년
 	protected String birthMonth;//월
 	protected String birthDay;//일
@@ -27,7 +27,7 @@ public class MemberVO {
 	
 	public MemberVO () {}
 	
-	public MemberVO(String memId, String memGrade, String nickname, String memGender, Date memBrithdate, String memPw,
+	public MemberVO(String memId, String memGrade, String nickname, String memGender, String memBrithdate, String memPw,
 			String memMobileNumber, String memKakaoId, String memPostcode1, String memAddress1, String memPostcode2,
 			String memAddress2, Date memJoinDate, int memWarningNum, int memBannedNum, int memCreditRate) {
 		super();
@@ -81,11 +81,11 @@ public class MemberVO {
 		this.memGender = memGender;
 	}
 
-	public Date getMemBrithdate() {
+	public String getMemBrithdate() {
 		return memBrithdate;
 	}
 
-	public void setMemBrithdate(Date memBrithdate) {
+	public void setMemBrithdate(String memBrithdate) {
 		this.memBrithdate = memBrithdate;
 	}
 

@@ -1,9 +1,5 @@
 package com.nanushare.springproject.controller.member;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,23 +23,24 @@ public class MemberController {
 	@RequestMapping("/join")
 	public String join(MemberVO memberVO, Model model) throws Exception{
 		if(memberVO.getMemId()!=null){//post
-			System.out.println(memberVO.getMemId());
-			System.out.println(memberVO.getMemGender());		
 			
-			//생년월일 합치기
-			SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
-			System.out.println(memberVO.getBirthYear()+"-"+memberVO.getBirthMonth()+"-"+memberVO.getBirthDay());//테스트 출력(생년월일)
-			Date birthDate = transFormat.parse(memberVO.getBirthYear()+"-"+memberVO.getBirthMonth()+"-"+memberVO.getBirthDay());
-			memberVO.setMemBrithdate(birthDate);
+			memberVO.setMemBrithdate(memberVO.getMemBrithdate());
 			
 			//주소합치기
 			if(memberVO.getMemAddress1()!=null){
-				String address1 = memberVO.getMemAddress1()+memberVO.getMemAddress_detail1();
-				memberVO.setMemAddress1(address1);
+				String[] strArr = {memberVO.getMemAddress1().replace(","," "), memberVO.getMemAddress_detail1()};
+				String resultStr = concatenate( strArr );
+				memberVO.setMemAddress1(resultStr);
+			}else{
+				memberVO.setMemAddress1("null");
+				memberVO.setMemPostcode1("null");
 			}
 			if(memberVO.getMemAddress2()!=null){
 				String address2 = memberVO.getMemAddress2()+memberVO.getMemAddress_detail2();
 				memberVO.setMemAddress2(address2);
+			}else{
+				memberVO.setMemAddress2("null");
+				memberVO.setMemPostcode2("null");
 			}
 			memberService.memberJoin(memberVO);
 			System.out.println("회원정보 입력 후 ");
@@ -53,4 +50,14 @@ public class MemberController {
 			return "/member/join";//회원가입폼
 		}
 	}
+	 public static String concatenate(String[] str){
+	        //문자열을 결합하여 리턴하는 메소드 구현
+	        String result = new String();
+	        for (int i = 0; i < str.length; i++) {
+	            result = result.concat(str[i]);
+	        }      
+	        return result;
+	    }
+	 
+
 }
