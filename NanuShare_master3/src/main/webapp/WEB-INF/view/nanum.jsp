@@ -13,14 +13,6 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
-<link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" rel="stylesheet" /> 
- <link type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" rel="stylesheet" /> 
- <script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
- <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
- <script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.js"></script>
- <script type="text/javascript" src="http://dev.jtsage.com/gpretty/prettify.js"></script>
- <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.ko.utf8.js"></script>
- <link type="text/css" href="http://dev.jtsage.com/gpretty/prettify.css" rel="stylesheet" />
 
 <style>
 	.ui-content > .ui-grid-a > img {
@@ -55,27 +47,27 @@
 <a href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div class="ui-grid-a">
       <div class="ui-block-a">
-      <img src="./resources/images/sample_icon.jpg" alt="furniture_icon" width="80" height="80"/>
+      <img src="/resources/images/sample_icon.jpg" alt="furniture_icon" width="80" height="80"/>
       <p>가구/가전</p>
       </div>
       <div class="ui-block-b">
-      <img alt="clothes_icon" src="./resources/images/sample_icon.jpg" width="80" height="80"/>
+      <img alt="clothes_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
       <p>의류</p>
       </div>
       <div class="ui-block-a">
-      <img alt="baby_icon" src="./resources/images/sample_icon.jpg" width="80" height="80"/>
+      <img alt="baby_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
       <p>육아</p>
       </div>
       <div class="ui-block-b">
-      <img alt="IT_icon" src="./resources/images/sample_icon.jpg" width="80" height="80"/>
+      <img alt="IT_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
       <p>IT</p>
       </div>
       <div class="ui-block-a">
-      <img alt="gifticon_icon" src="./resources/images/sample_icon.jpg" width="80" height="80"/>
+      <img alt="gifticon_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
       <p>기프티콘</p>
       </div>
       <div class="ui-block-b">
-      <img alt="etc_icon" src="./resources/images/sample_icon.jpg" width="80" height="80"/>
+      <img alt="etc_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
       <p>기타</p>
       </div>
 </div><!-- grid끝 -->
@@ -132,13 +124,13 @@
 <div data-role="main" class="ui-content">
 <a href="#nanum3" class="ui-btn ui-btn-inline ui-mini"> << </a>
 나눔방식 선택
-<a href="#nanum5" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div class="ui-grid-solo">
       <div class="ui-block-a" >
       <a href="#nanum5">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
-      		<img src="./resources/images/sample_icon.jpg" width="90px" height="90px">
+      		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       		</div>
       		<div class="ui-block-b">
       		<p style="font-weight : bold">선착순</p>
@@ -149,39 +141,45 @@
       <hr>
       </div>
       <div class="ui-block-a">
+       <a href="#nanum5">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
-      		<img src="./resources/images/sample_icon.jpg" width="90px" height="90px">
+      		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       		</div>
       		<div class="ui-block-b">
       		<p style="font-weight : bold">랜덤 선정</p>
       		<p>컴퓨터가 마감시간 이후 바드미를 자동으로 정하는 나눔 방식</p>      		
       		</div>
       	</div>
+      	</a>
       	<hr>
       </div>
       <div class="ui-block-a">
+       <a href="#nanum5">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
-      		<img src="./resources/images/sample_icon.jpg" width="90px" height="90px">
+      		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       		</div>
       		<div class="ui-block-b">
       		<p style="font-weight : bold">텔레파시</p>
       		<p>일정한 퀴즈로 나와 통하는 바드미를 정하는 나눔 방식</p>      		
       		</div>
       	</div>
+      	</a>
       	<hr>
       </div>
       <div class="ui-block-a">
+       <a href="#nanum5">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
-      		<img src="./resources/images/sample_icon.jpg" width="90px" height="90px">
+      		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       		</div>
       		<div class="ui-block-b">
       		<p style="font-weight : bold">사연</p>
       		<p>꼭 필요한 이유나 원하는 질문에 대답하는 나눔 방식</p>      		
       		</div>
       	</div>
+      	</a>
       	<hr>
       </div>
 </div><!-- grid끝 -->
@@ -199,8 +197,11 @@
 선착순 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
-<input type="date" data-role="datebox" data-theme='a' name="meetDay" id="meetDay" readonly
-							    		placeholder="날짜 선택" data-options='{"mode": "flipbox","headerFormat": "날짜 선택"}'  />
+<input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
+<hr>
+<p>마감 시간</p>
+<input name="deadline_time" id="deadline_time" type="time" value="">
+
 
 </div><!-- main끝 -->
 </div><!-- page끝 -->
