@@ -234,24 +234,7 @@
         </tr>
         <tr>
         <td colspan="2" align="center" >생년월일</td>
-        <td><select id="sel1" name="birthYear">
-        <option>출생연도</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
-      <td><select id="sel2" name="birthMonth">
-        <option>월</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
-      <td><select id="sel3" name="birthDay">
-        <option>일</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
+        <td><input name="date" id="date" type="date" value=""></td>
         </tr>
          <tr>
         <td colspan="2" align="center">연락처</td>

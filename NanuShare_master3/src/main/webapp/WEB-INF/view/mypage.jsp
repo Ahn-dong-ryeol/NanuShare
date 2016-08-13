@@ -145,7 +145,7 @@
     </div>
 
   <div data-role="main" class="ui-content">
-   <table style="width:100%" border="1">
+   <table width="100%" border="1">
 		<tr>
          <td rowspan="2" align="center"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>??님</td>
          <td align="center">나눔포인트</td>
@@ -344,7 +344,7 @@
       <ul data-role="listview" data-inset="true">
       <li data-role="divider">나 누 미 정 보</li>
       <li>
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td>나누미 ID</td>
       <td>haha1234</td>
@@ -361,7 +361,7 @@
       </li>
       <li data-role="divider">배 송 정 보</li>
       <li>
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td>택배회사</td>
       <td colspan="2">CJ대한통운</td>
@@ -534,7 +534,7 @@
       <ul data-role="listview" data-inset="true">
       <li data-role="divider">바 드 미 정 보</li>
       <li>
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td>바드미 ID</td>
       <td>haha1234</td>
@@ -551,7 +551,7 @@
       </li>
       <li data-role="divider">배 송 정 보</li>
       <li>
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td>택배회사</td>
       <td><select id="sel1">
@@ -623,15 +623,15 @@
     </div>
 
   <div data-role="main" class="ui-content">
-       <table style="width:100%">
+       <table width="100%">
 <tr>
-         <td rowspan="2"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a></td>
+         <td rowspan="2"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a></th>
          <td align="center">아이디</td>
          <td colspan="3">awsert</td>
         </tr>
         <tr>
         <td align="center">닉네임</td>
-        <td colspan="2"><input type="text" id="nickname" name="nickname"placeholder="니익네임"/></td>
+        <td colspan="2"><input type="text" id="nickname" name="nickname" value="교회는영어로"/></td>
 		<td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-btn-b ui-corner-all">중복확인</a></td>
         </tr>
         <tr>
@@ -657,32 +657,15 @@
         </tr>
         <tr>
         <td colspan="2" align="center" >생년월일</td>
-        <td><select id="sel1">
-        <option>출생연도</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
-      <td><select id="sel2">
-        <option>월</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
-      <td><select id="sel3">
-        <option>일</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select></td>
+        <td><input name="date" id="date" type="date" value="1994-03-11"></td>
         </tr>
          <tr>
         <td colspan="2" align="center">연락처</td>
-        <td colspan="2"><input type="text" name="pw"placeholder="010101010"/></td>
+        <td colspan="2"><input type="text" name="pw" value="010101010"/></td>
         <td></td>
         <tr>
         <td colspan="2" align="center">카카오톡ID</td>
-        <td colspan="3"><input type="text" name="pwcheck"placeholder="sseokyu"/></td>
+        <td colspan="3"><input type="text" name="pwcheck" value="sseokyu"/></td>
         </tr>
 </table>
 <br/>
@@ -694,24 +677,24 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td align="center">우편번호</td>
-      <td><input type="text" id="postcode1" placeholder="60985"></td>
+      <td><input type="text" id="postcode1" value="60985"></td>
       <td align="center"><input type="button" onclick="execDaumPostcode1()" value="검색" ><br></td>
       </tr>
       <tr>
       <td align="center">주소</td>
-      <td colspan="2"><input type="text" id="address1" placeholder="부산시 금정구"></td>
+      <td colspan="2"><input type="text" id="address1" value="부산시 금정구"></td>
       </tr>
        <tr>
       <td align="center">상세주소</td>
-      <td colspan="2"><input type="text" id="detail_address1" placeholder="33호"></td>
+      <td colspan="2"><input type="text" id="detail_address1" value="33호"></td>
       </tr>
       </table>
       </div>
     <div id="menu1" class="tab-pane fade">
-      <table style="width:100%">
+      <table width="100%">
       <tr>
       <td align="center">우편번호</td>
       <td><input type="text" id="postcode2" placeholder=""></td>

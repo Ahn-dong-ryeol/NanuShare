@@ -86,7 +86,7 @@ $(document).ready(function(){
 </div><!-- 오른쪽 panel끝 -->
 
 <div data-role="content">
-<h3>신고하기</h3>
+<h3>1:1문의</h3>
 <ul data-role="listview" data-inset="true">
       <li>
       <table style="width:100%">
