@@ -46,10 +46,10 @@
                     fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
                 }
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('postcode1').value = data.zonecode; //5자리 새우편번호 사용
-                document.getElementById('address1').value = fullAddr;
+                document.getElementById('memPostcode1').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('memAddress1').value = fullAddr;
                 // 커서를 상세주소 필드로 이동한다.
-                document.getElementById('detail_address1').focus();
+                document.getElementById('memAddress_detail1').focus();
             }
         }).open();
     }
@@ -83,10 +83,10 @@
                     fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
                 }
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('postcode2').value = data.zonecode; //5자리 새우편번호 사용
-                document.getElementById('address2').value = fullAddr;
+                document.getElementById('memPostcode2').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('memAddress2').value = fullAddr;
                 // 커서를 상세주소 필드로 이동한다.
-                document.getElementById('detail_address2').focus();
+                document.getElementById('memAddress_detail2').focus();
             }
         }).open();
     }
@@ -140,7 +140,7 @@
       <label><input type="checkbox" value="">전체 약관 동의</label>
     <hr>
     
-    <table width="100%">
+    <table style="width:100%">
 	<tr><td><label><input type="checkbox" value="">서비스 이용약관 동의</label></td>
       <td align="center"> | 내용</td></tr>
       <tr><td><label><input type="checkbox" value="">위치정보 이용약관 동의</label></td>
@@ -151,7 +151,7 @@
       <td align="center"> | 내용</td></tr>
       </table>
       
-  <table width="100%">
+  <table style="width:100%">
   <tr>
   <td width="50%">
   <a href="#join2"><button type="button" class="btn btn-primary btn-lg btn-block">동의</button></a></td>
@@ -203,9 +203,9 @@
 <div data-role="content">
 <h3>회원가입</h3>
 <form class="form-horizontal" role="form" action="/member/join" method="post">
-<table width="100%">
+<table style="width:100%">
 <tr>
-         <td rowspan="2"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a></th>
+         <td rowspan="2"><a href="#" class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a></td>
          <td align="center">아이디</td>
          <td colspan="2"><input type="text" id="memId" name="memId" placeholder="아이디 입력"/></td>
          <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-btn-b ui-corner-all">중복확인</a></td>
@@ -258,6 +258,7 @@
         <td colspan="2"><input type="text" name="memMobileNumber"placeholder="연락처 입력"/></td>
         <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">본인인증</a></td>
         </tr>
+        <tr>
         <td colspan="2" align="center">인증번호</td>
         <td colspan="2"><input type="text" name="pw"placeholder="인증번호 입력"/></td>
         <td align="center"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-corner-all">확인</a></td>
@@ -276,7 +277,7 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <table width="100%">
+      <table style="width:100%">
       <tr>
       <td align="center">우편번호</td>
       <td><input type="text" id="memPostcode1" placeholder=""></td>
@@ -293,7 +294,7 @@
       </table>
       </div>
     <div id="menu1" class="tab-pane fade">
-      <table width="100%">
+      <table style="width:100%">
       <tr>
       <td align="center">우편번호</td>
       <td><input type="text" id="memPostcode2" placeholder=""></td>
