@@ -356,7 +356,7 @@
 
 <div data-role="content">
 <h3>회원가입을 축하합니다!</h3>
-<h4>로그인해주세요.</h3>
+<h3>로그인해주세요.</h3>
     <hr>
       <input type="text" name="user" id="usrnm" placeholder="아이디">
           <input type="password" name="passw" id="pswd" placeholder="비밀번호">
