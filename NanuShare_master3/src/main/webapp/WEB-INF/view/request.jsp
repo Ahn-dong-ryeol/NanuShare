@@ -263,7 +263,7 @@ $(document).ready(function(){
 </div><!-- 오른쪽 panel끝 -->
 
 <div data-role="content">
-<h3>신고하기</h3>
+<h3>1:1문의</h3>
 신고분류 | 신고글 제목 
 <table style="width:100%">
 		<tr>
