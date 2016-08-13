@@ -6,7 +6,7 @@
 <head>
    <title>Home</title>
 <meta name="viewport" content="user-scalable=no,width=divice-width"/>
-<link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:799px)">
+<!-- <link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:799px)">  -->
 <meta name="viewport" content="width=device-width,initial-sacle=1">
 
 <link rel="stylesheet"href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
@@ -34,7 +34,7 @@
 <div data-role="page">
 <div data-role="header">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1>Nanushare</h1>
+<h1><a href="home">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 
@@ -52,12 +52,12 @@
           <a href="#">아이디 찾기</a>
           <a href="#">비밀번호 찾기</a><br>
           <input type="submit" data-inline="true" value="로그인">
-          <a href='member/join'><input type="submit" data-inline="true" value="회원가입"></a>
+          <a href="join"><input type="submit" data-inline="true" value="회원가입"></a>
         </div><!-- 로그인 끝 -->
       </form>
     </div><!-- 팝업끝 -->
 	<hr>
-	<p><a herf="#">마이 페이지</a></p>
+	<p><a href="#">마이 페이지</a></p>
 	<hr>
 	<table data-role="table" class="ui-responsive" id="get-list">
 	<thead>
