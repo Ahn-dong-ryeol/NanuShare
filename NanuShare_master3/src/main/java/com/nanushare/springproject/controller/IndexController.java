@@ -38,7 +38,7 @@ public class IndexController {
 	}
 	@RequestMapping(value = "/view/nanum", method = RequestMethod.GET)
 	public String ex1(){
-		return "nanum";
+		return "view/nanum";
 	}
 	@RequestMapping(value = "/view/mypage", method = RequestMethod.GET)
 	public String ex2(){

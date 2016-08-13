@@ -52,7 +52,7 @@
           <a href="#">아이디 찾기</a>
           <a href="#">비밀번호 찾기</a><br>
           <input type="submit" data-inline="true" value="로그인">
-          <a href="join"><input type="submit" data-inline="true" value="회원가입"></a>
+          <a href="/member/join"><input type="submit" data-inline="true" value="회원가입"></a>
         </div><!-- 로그인 끝 -->
       </form>
     </div><!-- 팝업끝 -->
@@ -117,7 +117,7 @@
 <div class="container">
 <div class="ui-grid-b">
       <div class="ui-block-a"> 
-        <a href="nanum" class="ui-btn ui-corner-all ui-shadow">나눔하기</a><br>
+        <a href="/view/nanum" class="ui-btn ui-corner-all ui-shadow">나눔하기</a><br>
       </div>
       <div class="ui-block-b">
 	       <form method="post" action="demoform.asp">
