@@ -18,9 +18,9 @@ public class MemberController {
 	//회원가입
 	@RequestMapping("/join1")
 	public String join1(){
-		return "/member/join#join1";
+		return "/member/join1";
 	}
-	@RequestMapping("/join")
+	@RequestMapping("/join2")
 	public String join(MemberVO memberVO, Model model) throws Exception{
 		if(memberVO.getMemId()!=null){//post
 			
@@ -44,10 +44,10 @@ public class MemberController {
 			}
 			memberService.memberJoin(memberVO);
 			System.out.println("회원정보 입력 후 ");
-			return "/member/join#join3";
-		}else{
+			return "/member/join3";
+		}else{							//get방식
 			System.out.println("회원가입 get ");
-			return "/member/join";//회원가입폼
+			return "/member/join2";//회원가입폼
 		}
 	}
 	 public static String concatenate(String[] str){
