@@ -4,5 +4,6 @@ import com.nanushare.springproject.domain.nanum.NanumVO;
 
 public interface NanumRepository {
 	//나눔 글 작성 처리 
-	void nanumInsert(NanumVO nanumVO);
+	int nanumInsert(NanumVO nanumVO);
+	
 }

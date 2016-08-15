@@ -10,9 +10,9 @@ public class NanumVO {
 	private String nanumContent;
 	private Date nanumDate;
 	private int nanumChoiceNum;
-	private Date nanumEndDate;
+	private String nanumEndDate;
 	private String nanumState;
-	private String nanumDeleteCheck;
+	private String nanumDeleteCheck;//Y,N
 	private int nanumHits;
 	private int nanumCategoryId;
 	private String nanumWriter;
@@ -22,7 +22,7 @@ public class NanumVO {
 	public NanumVO(){}
 
 	public NanumVO(int nanumId, String nanumDelibery, String nanumTitle, String nanumContent, Date nanumDate,
-			int nanumChoiceNum, Date nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
+			int nanumChoiceNum, String nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
 			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle) {
 		super();
 		this.nanumId = nanumId;
@@ -89,11 +89,11 @@ public class NanumVO {
 		this.nanumChoiceNum = nanumChoiceNum;
 	}
 
-	public Date getNanumEndDate() {
+	public String getNanumEndDate() {
 		return nanumEndDate;
 	}
 
-	public void setNanumEndDate(Date nanumEndDate) {
+	public void setNanumEndDate(String nanumEndDate) {
 		this.nanumEndDate = nanumEndDate;
 	}
 
@@ -152,7 +152,17 @@ public class NanumVO {
 	public void setNanumStroyTitle(String nanumStroyTitle) {
 		this.nanumStroyTitle = nanumStroyTitle;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "NanumVO [nanumId=" + nanumId + ", nanumDelibery=" + nanumDelibery + ", nanumTitle=" + nanumTitle
+				+ ", nanumContent=" + nanumContent + ", nanumDate=" + nanumDate + ", nanumChoiceNum=" + nanumChoiceNum
+				+ ", nanumEndDate=" + nanumEndDate + ", nanumState=" + nanumState + ", nanumDeleteCheck="
+				+ nanumDeleteCheck + ", nanumHits=" + nanumHits + ", nanumCategoryId=" + nanumCategoryId
+				+ ", nanumWriter=" + nanumWriter + ", nanumMethod=" + nanumMethod + ", nanumStroyTitle="
+				+ nanumStroyTitle + "]";
+	}
+
 	
 	
 

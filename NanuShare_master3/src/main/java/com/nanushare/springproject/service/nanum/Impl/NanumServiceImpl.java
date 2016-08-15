@@ -15,7 +15,14 @@ public class NanumServiceImpl implements NanumService {
 	
 	//나눔글 작성 처리
 	public void nanumInsert(NanumVO nanumVO) {
-		nanumRepository.nanumInsert(nanumVO);
+		System.out.println("2. NanumService 진입"+nanumVO.getNanumTitle());
+		int resultId = nanumRepository.nanumInsert(nanumVO);
+		if((Integer)resultId == null){
+			System.out.println("3. insert된 ID 안넘어옴!"+ resultId);
+		}else{ 
+			System.out.println("3. insert된 ID: "+resultId);
+		}
+		
 	}
 
 	
