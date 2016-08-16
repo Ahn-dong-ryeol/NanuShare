@@ -1,8 +1,8 @@
 package com.nanushare.springproject.controller.member;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nanushare.springproject.domain.member.MemberVO;
@@ -12,7 +12,7 @@ import com.nanushare.springproject.service.member.MemberService;
 @RequestMapping("/member")
 public class MemberController {
 	
-	@Autowired
+	@Inject
 	MemberService memberService;
 	
 	//회원가입
@@ -21,7 +21,7 @@ public class MemberController {
 		return "/member/join1";
 	}
 	@RequestMapping("/join2")
-	public String join(MemberVO memberVO, Model model) throws Exception{
+	public String join(MemberVO memberVO) throws Exception{
 		if(memberVO.getMemId()!=null){//post
 			
 			memberVO.setMemBrithdate(memberVO.getMemBrithdate());

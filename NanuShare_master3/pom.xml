@@ -70,6 +70,13 @@
 			<version>${jsp.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
 	
 		<!-- Spring and Transactions -->
 		<dependency>

@@ -28,4 +28,18 @@
 	        <property name="contentType" value="text/html; charset=UTF-8"/>
 	</bean>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path = "/member/login"/> 
+			<bean id="loginInterceptor" class="com.nanushare.springproject.interceptor.LoginInterceptor"/>
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path=""/> <!-- 로그인한 사용자인지 확인이 필요한 페이지 -->
+			<bean id="authInterceptor" class="com.nanushare.springproject.interceptor.AuthInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 </beans>
+
+	
