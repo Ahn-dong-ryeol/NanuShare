@@ -1,6 +1,5 @@
 package com.nanushare.springproject.interceptor;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,12 +20,17 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		HttpSession session = request.getSession();
 		ModelMap modelMap = modelAndView.getModelMap();
-		Object userVO = modelMap.get("userVO");
+		Object memberVO = modelMap.get("memberVO");
 		
-		if(userVO != null){
+		if(memberVO != null){
 			logger.info("new login success");
-			session.setAttribute(LOGIN, userVO);
-			response.sendRedirect("/");
+			session.setAttribute(LOGIN, memberVO);
+			//response.sendRedirect("/home");
+			Object dest = session.getAttribute("dest");
+			logger.info("URL은 "+(dest !=null ? (String)dest:"/"));
+			System.out.println("URL은 "+(dest !=null ? (String)dest:"/"));
+			response.sendRedirect(dest !=null ? (String)dest:"/");
+			
 		}
 	}
 	
@@ -38,6 +42,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		
 		if(session.getAttribute(LOGIN) != null){
 			logger.info("clear login data before");
+			session.removeAttribute(LOGIN);
 		}
 		return true;
 	}

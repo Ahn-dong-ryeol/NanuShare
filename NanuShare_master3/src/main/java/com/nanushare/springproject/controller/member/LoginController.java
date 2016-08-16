@@ -20,16 +20,19 @@ public class LoginController {
 	MemberService memberService;
 	
 	@RequestMapping(value = "/login", method=RequestMethod.GET)
-	public void loginGET(@ModelAttribute("memberVO") MemberVO memberVO){
-		
+	public void loginGET(@ModelAttribute("memberVO") MemberVO memberVO) throws Exception{
+		System.out.println("loginGET 실행");
 	}
 	
 	@RequestMapping(value = "/login", method=RequestMethod.POST)
 	public void loginPOST(MemberVO memberDTO, HttpSession session, Model model) throws Exception {
+		System.out.println("loginPOST 실행");
 		MemberVO memberVO = memberService.login(memberDTO);
 		
 		if(memberVO == null){
 			return;
 		}
+		
+		model.addAttribute("memberVO",memberVO);
 	}
 }

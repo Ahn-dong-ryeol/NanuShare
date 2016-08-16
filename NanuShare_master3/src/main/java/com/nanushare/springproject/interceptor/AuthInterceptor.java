@@ -23,6 +23,10 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	    } else {
 	      query = "?" + query;
 	    }
+	        
+	    if(uri.equals("/member/login")){
+	    	uri = null;
+	    }
 
 	    if (req.getMethod().equals("GET")) {
 	      logger.info("dest: " + (uri + query));
@@ -39,7 +43,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			
 			saveDest(request);
 			
-			response.sendRedirect("/member/login"); //로그인 안했으면 로그인 페이지로 이동
+			response.sendRedirect("로그인 페이지"); //로그인 안했으면 로그인 페이지로 이동
 			return false;
 		}
 		return true;

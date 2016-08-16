@@ -42,7 +42,7 @@
 	<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">로그인</a>
 
     <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" action="demoform.asp">
+      <form method="post" action="/member/login">
       	<div>
           <h3>로그인</h3>
           <input type="text" name="user" id="usrnm" placeholder="아이디">
