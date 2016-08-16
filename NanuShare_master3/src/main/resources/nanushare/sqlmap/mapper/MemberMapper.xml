@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into MEMBER_TB values(#{memId},'일반',#{nickname},#{memGender},#{memBrithdate},#{memPw},#{memMobileNumber},#{memKakaoId},#{memPostcode1},#{memAddress1},#{memPostcode2},#{memAddress2},NOW(),0,0,0.0);
 	</insert>
 	
-	<select id="login" resultType="com.nanushare.springproject.domain.member.MemberVO">
+	<select id="login" resultMap="memberMap">
 		select mem_id, mem_pw, nickname from MEMBER_TB
 		where mem_id=#{memId} and mem_pw=#{memPw}
 	</select>

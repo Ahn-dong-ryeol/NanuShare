@@ -12,11 +12,11 @@ import com.nanushare.springproject.service.member.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService {
 	
-	@Inject
-	private MemberRepository memberRepository;
+/*	@Inject
+	private MemberRepository memberRepository;*/
 	
-	/*@Autowired
-	MemberRepository memberRepository;*/
+	@Autowired
+	MemberRepository memberRepository;
 	
 	public void memberJoin(MemberVO memberVO) {
 		memberRepository.memberInsert(memberVO);

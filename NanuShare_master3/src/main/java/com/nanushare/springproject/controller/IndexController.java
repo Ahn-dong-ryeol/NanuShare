@@ -30,18 +30,18 @@ public class IndexController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "/view/home";
+		return "/home";
 	}
 	@RequestMapping(value = "/view/join", method = RequestMethod.GET)
 	public String ex(){
-		return "/view/join";
+		return "/join";
 	}
 	@RequestMapping(value = "/view/nanum", method = RequestMethod.GET)
 	public String ex1(){
-		return "/view/nanum";
+		return "/nanum";
 	}
 	@RequestMapping(value = "/view/mypage", method = RequestMethod.GET)
 	public String ex2(){
-		return "/view/mypage"; 
+		return "/mypage"; 
 	}
 }
