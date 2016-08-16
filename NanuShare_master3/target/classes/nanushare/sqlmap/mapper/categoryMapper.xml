@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nanushare.springproject.repository.category.CategoryRepository"> 
+	<resultMap type="com.nanushare.springproject.domain.category.ProdCateVO" id="prodCateMap">
+		<result column="prod_cate_id" property="prodCateId"/>
+		<result column="prod_cate_name" property="prodCateName"/>
+		<result column="prod_cate_order" property="prodCateOrder"/>
+		<result column="prod_cate_parent_id" property="prodCateParantId"/>
+	</resultMap>
+	
+	<!-- 상품카테고리 select -->
+	<select id="selectProdCate" resultType="prodCateMap">
+		SELECT * FROM PRODUCT_CATE_TB 
+		WHERE #{prodCateParantId} IS NULL 
+		ORDER BY #{prodCateOrder};
+	</select>
+
+		
+</mapper>
