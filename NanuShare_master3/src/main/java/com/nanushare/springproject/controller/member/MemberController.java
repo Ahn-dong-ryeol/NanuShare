@@ -22,9 +22,8 @@ public class MemberController {
 		return "member/join1"; // 약관
 	}
 	@RequestMapping(value="/join2", method=RequestMethod.GET)
-	public String join(MemberVO memberVO) throws Exception{
+	public void join(MemberVO memberVO) throws Exception{
 			System.out.println("회원가입 get ");
-			return "member/join2";//회원가입폼
 	}
 	
 	@RequestMapping(value="/join2", method=RequestMethod.POST)
@@ -54,6 +53,7 @@ public class MemberController {
 		System.out.println("회원정보 입력 후 ");
 		return "member/join3";
 	}
+	
 	 public static String concatenate(String[] str){
 	        //문자열을 결합하여 리턴하는 메소드 구현
 	        String result = new String();
