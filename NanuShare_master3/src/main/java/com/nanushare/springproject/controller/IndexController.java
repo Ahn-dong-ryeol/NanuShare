@@ -42,6 +42,6 @@ public class IndexController {
 	}
 	@RequestMapping(value = "/view/mypage", method = RequestMethod.GET)
 	public String ex2(){
-		return "/view/mypage";
+		return "/view/mypage"; 
 	}
 }
