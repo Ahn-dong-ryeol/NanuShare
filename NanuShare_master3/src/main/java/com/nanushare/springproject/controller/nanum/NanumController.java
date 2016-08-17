@@ -1,6 +1,7 @@
 package com.nanushare.springproject.controller.nanum;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,7 +13,7 @@ import com.nanushare.springproject.service.nanum.NanumService;
 @RequestMapping("/nanum")
 public class NanumController {
 	
-	@Autowired
+	@Inject
 	NanumService nanumService;
 	
 	//나눔글 작성 페이지 이동

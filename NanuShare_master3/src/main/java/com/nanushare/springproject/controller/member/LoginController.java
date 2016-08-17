@@ -28,7 +28,7 @@ public class LoginController {
 	public void loginPOST(MemberVO memberDTO, HttpSession session, Model model) throws Exception {
 	// 리턴타입이 void인 경우 현재 경로에 해당하는 jsp파일을 실행
 		System.out.println("loginPOST 실행");
-		MemberVO memberVO = memberService.login(memberDTO);
+		MemberVO memberVO = memberService.login(memberDTO.getMemId(),memberDTO.getMemPw());
 		
 		if(memberVO == null){
 			return;

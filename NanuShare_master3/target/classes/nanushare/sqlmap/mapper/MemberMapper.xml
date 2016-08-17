@@ -23,6 +23,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="mem_credit_rate" property="memCreditRate"/>
 	</resultMap>
 	
+	<select id="getTime" resultType="String">
+		select now()
+	</select>
+	
 	<insert id="memberInsert" parameterType="com.nanushare.springproject.domain.member.MemberVO">
 		insert into MEMBER_TB values(#{memId},'일반',#{nickname},#{memGender},#{memBrithdate},#{memPw},#{memMobileNumber},#{memKakaoId},#{memPostcode1},#{memAddress1},#{memPostcode2},#{memAddress2},NOW(),0,0,0.0);
 	</insert>
