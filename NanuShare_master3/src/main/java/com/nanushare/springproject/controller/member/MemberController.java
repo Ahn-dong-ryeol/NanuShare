@@ -66,7 +66,7 @@ public class MemberController {
 	        }      
 	        return result;
 	    }
-	 
+	 //login.jsp + 회원가입 성공 메시지
 	 @RequestMapping(value="/join3", method=RequestMethod.GET)
 	 public void joinlogin(Model model) throws Exception {
 		 System.out.println("joinlogin 호출됨");

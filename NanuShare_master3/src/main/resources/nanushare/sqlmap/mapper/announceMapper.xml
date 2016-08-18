@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nanushare.springproject.repository.announce.AnnounceRepository">
+	
+	<resultMap type="com.nanushare.springproject.domain.announce.AnnVO" id="AnnMap">
+		<result column="ann_id" property="annId" />
+		<result column="ann_title" property="annTitle"/>
+		<result column="ann_contents" property="annContents"/>
+		<result column="ann_write_date" property="annWriteDate"/>
+		<result column="ann_hits" property="annHits"/>
+		<result column="mem_id" property="memId"/>
+	</resultMap>
+	
+	<insert id="create">
+	insert into ANNOUNCEMENT_TB(ann_title, ann_contents, ann_write_date, mem_id)
+	values(#{annTitle}, #{annContents},now(),'test1')
+	</insert>
+	
+	<select id="read" resultType="com.nanushare.springproject.domain.announce.AnnVO" resultMap="AnnMap">
+	select ann_id, ann_title, ann_contents, ann_write_date, mem_id
+	from ANNOUNCEMENT_TB
+	where ann_id = #{annId}
+	</select>
+	
+	<update id="update">
+	update ANNOUNCEMENT_TB
+	set ann_title=#{annTitle}, ann_contents=#{annContents}
+	where ann_id = #{annId}
+	</update>
+	
+	<delete id="delete">
+	delete from ANNOUNCEMENT_TB
+	where ann_id = #{annId}
+	</delete>
+
+	<select id="listAll" resultType="com.nanushare.springproject.domain.announce.AnnVO" resultMap="AnnMap">
+	<![CDATA[
+	select ann_id, ann_title, ann_write_date, mem_id, ann_hits
+	from ANNOUNCEMENT_TB
+	where ann_id>0
+	order by ann_id desc
+	limit #{pageStart}, #{perPageNum}
+	]]>
+	</select>
+	
+	<select id="countPaging" resultType="int">
+	<![CDATA[
+	select count(ann_id)
+	from ANNOUNCEMENT_TB
+	where ann_id > 0;
+	]]>
+	</select>
+</mapper>
