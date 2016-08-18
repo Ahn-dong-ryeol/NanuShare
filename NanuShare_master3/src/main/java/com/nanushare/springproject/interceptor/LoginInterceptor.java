@@ -16,8 +16,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 	
 	@Override
-	// 지정된 컨트롤러의 동작 이후에 처리
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+		// 지정된 컨트롤러의 동작 이후에 처리
 		HttpSession session = request.getSession();
 		ModelMap modelMap = modelAndView.getModelMap();
 		Object memberVO = modelMap.get("memberVO");
@@ -28,9 +28,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			//response.sendRedirect("/home");
 			Object dest = session.getAttribute("dest");
 			logger.info("URL은 "+(dest !=null ? (String)dest:"/"));
-			System.out.println("URL은 "+(dest !=null ? (String)dest:"/"));
 			response.sendRedirect(dest !=null ? (String)dest:"/");
-			
 		}
 	}
 	

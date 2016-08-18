@@ -3,6 +3,7 @@ package com.nanushare.springproject.controller.member;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,6 +25,7 @@ public class MemberController {
 	@RequestMapping(value="/join2", method=RequestMethod.GET)
 	public void join(MemberVO memberVO) throws Exception{
 			System.out.println("회원가입 get ");
+			//리턴타입이 void면 현재경로의 jsp호출
 	}
 	
 	@RequestMapping(value="/join2", method=RequestMethod.POST)
@@ -49,9 +51,11 @@ public class MemberController {
 			memberVO.setMemAddress2("null");
 			memberVO.setMemPostcode2("null");
 		}
+		
 		memberService.memberJoin(memberVO);
 		System.out.println("회원정보 입력 후 ");
-		return "member/join3";
+		//return "member/join3";
+		return "redirect:/member/join3";
 	}
 	
 	 public static String concatenate(String[] str){
@@ -63,5 +67,9 @@ public class MemberController {
 	        return result;
 	    }
 	 
+	 @RequestMapping(value="/join3", method=RequestMethod.GET)
+	 public void joinlogin(Model model) throws Exception {
+		 System.out.println("joinlogin 호출됨");
+	 }
 
 }

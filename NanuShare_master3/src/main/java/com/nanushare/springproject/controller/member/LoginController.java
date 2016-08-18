@@ -31,9 +31,8 @@ public class LoginController {
 		MemberVO memberVO = memberService.login(memberDTO.getMemId(),memberDTO.getMemPw());
 		
 		if(memberVO == null){
-			return;
+			return ;
 		}
-		
 		model.addAttribute("memberVO",memberVO);
 	}
 	
