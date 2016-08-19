@@ -13,6 +13,14 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
+<script>
+function addtele(){
+	var tele = 
+		"fuck you"
+	return tele;
+}
+
+</script>
 
 <style>
 	.ui-content > .ui-grid-a > img {
@@ -38,11 +46,11 @@
 <div data-role="page" id="nanum1">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 상품 카테고리 선택
 <a href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div class="ui-grid-a">
@@ -77,11 +85,11 @@
 <div data-role="page" id="nanum2">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum1" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 상세 카테고리 선택
 <a href="#nanum3" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <input type="search" name="search" id="search" placeholder="상품의 종류를 입력하세요."> <!-- 검색 -->
@@ -104,11 +112,11 @@
 <div data-role="page" id="nanum3">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 사진등록
 <a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 
@@ -118,13 +126,13 @@
 <div data-role="page" id="nanum4">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum3" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 나눔방식 선택
-<a href="#blockPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-mini" data-position-to="window"> >> </a>
+<a href="#blockPopup1" data-rel="popup" class="ui-btn ui-btn-inline ui-mini" data-position-to="window"> >> </a>
 <div class="ui-grid-solo">
       <div class="ui-block-a" >
       <a href="#nanum5-1">
@@ -183,7 +191,7 @@
       	<hr>
       </div>
 </div><!-- grid끝 -->
-<div data-role="popup" id="blockPopup" class="ui-content">
+<div data-role="popup" id="blockPopup1" class="ui-content">
       <p>나눔방식을 선택해야합니다.</p>
       
 </div><!-- popup끝 -->
@@ -193,11 +201,11 @@
 <div data-role="page" id="nanum5-1">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 선착순 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
@@ -212,11 +220,11 @@
 <div data-role="page" id="nanum5-2">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 랜덤 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
@@ -231,21 +239,22 @@
 <div data-role="page" id="nanum5-3">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 텔레파시 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
-<form method="post" action="#">
-      <p>텔레파시 문제</p>
+<p>텔레파시 문제</p>
+<form method="post" action="#" id="teleForm">
         <input type="text" id="answer1" placeholder="첫번째 텔레파시">
         <input type="radio" name="telepathy" id="answer1" value="answer1">
         <input type="text" id="answer2" placeholder="두번째 텔레파시">
         <input type="radio" name="telepathy" id="answer2" value="answer2">
-<a href="#" class="ui-btn ui-btn-inline ui-mini"> 문제 추가하기 </a>
 </form>
+<p id="demo"></p>
+<butten class="ui-btn ui-btn-inline ui-mini" id="telePlus" onclick="document.getElementById('demo').innerHTML = addtele()"> 문제 추가하기 </butten>
 <hr>
 <p>선정인원</p>
 <input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
@@ -259,11 +268,11 @@
 <div data-role="page" id="nanum5-4">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 사연 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>사연 양식</p>
@@ -281,36 +290,48 @@
 <div data-role="page" id="nanum6">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 배송 방식 선택
-<a href="#nanum7" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a href="#blockPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-mini" data-position-to="window"> >> </a>
 <div class="ui-grid-solo">
       <div class="ui-block-a" >
+      <a href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">택배 배송</p>
+      </a>
       <hr>
       </div>
       <div class="ui-block-a">
+      <a href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
-      	<p style="font-weight : bold">직접 거래</p>  		
+      	<p style="font-weight : bold">직접 거래</p>  	
+      </a>	
       	<hr>
       </div>
       <div class="ui-block-a">
+      <a href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">우편 배송</p>	
+      </a>
       	<hr>
       </div>
       <div class="ui-block-a">
-      	<div class="ui-grid-a">
+      <a href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">기프티콘</p>
+      </a>
       	<hr>
       </div>
 </div><!-- grid끝 -->
+
+<div data-role="popup" id="blockPopup2" class="ui-content">
+      <p>배송 방식을 선택해야합니다.</p>
+      
+</div><!-- popup끝 -->
 
 </div><!-- main끝 -->
 </div><!-- page끝 -->
@@ -318,18 +339,32 @@
 <div data-role="page" id="nanum7">
 <div data-role="header" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="home">Nanushare</a></h1>
+<h1><a href="/">Nanushare</a></h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 나눔글 작성
-<a href="#nanum8" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a href="#nanum8" class="ui-btn ui-btn-inline ui-mini"> 완료 </a>
 
  <input type="text" name="nanumTitle" id="nanumTitle" placeholder="나눔글 제목">
  
  <textarea name="nanumContents" id="nanumContents"></textarea>
  
+</div><!-- main끝 -->
+</div><!-- page끝 -->
+
+<div data-role="page" id="nanum8">
+<div data-role="header" data-theme="f">
+<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a href="/">Nanushare</a></h1>
+<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+</div><!-- header끝 -->
+<div data-role="main" class="ui-content">
+	<img src="/resources/images/sample_icon.jpg" width="100px" height="100px">
+	<h2>작성 완료</h2>
+	<a href="/" class="ui-btn ui-btn-inline " > 내가 쓴 게시글 보러 가기 </a><br>
+	<a href="/" class="ui-btn ui-btn-inline " > 해당 카테고리 보러 가기 </a>
 </div><!-- main끝 -->
 </div><!-- page끝 -->
 
