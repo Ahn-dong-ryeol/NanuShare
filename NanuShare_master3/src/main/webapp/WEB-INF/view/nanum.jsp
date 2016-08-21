@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="utf-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
    <title>Home</title>
@@ -19,10 +19,34 @@ function addtele(){
 		"fuck you"
 	return tele;
 }
-
+function onSuccess($imageData){
+	$('#camera-image').
+		css({'background-image':'url('+$imageData + ')',
+			'background-size':'100%', 'background-repeat':'no-repeat'});
+}
+function onFail($message){
+	navigator.notification.alert('Fail...'+$message);
+}
+function getPictureFromCamera(){
+	navigator.camera.getPicture(onSuccess,onFail,
+			{quality:50,
+			 destinationType:navigator.camera.DestinationType.FILE_URI,
+			 sourceType:navigator.camera.PictureSourceType.CAMERA} );
+}
+function getPictureFromAlbum(){
+	navigator.camera.getPicture(onSuccess, onFail,
+			{quality:50,
+			 destinationType:navigator.camera.DestinationType.FILE_URI,
+			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY} );
+}
 </script>
 
 <style>
+  .ui-bar-f {
+    color: white;
+    background-color: lightgreen;
+    border:0px;
+}
 	.ui-content > .ui-grid-a > img {
 		margin : auto;
 	}
@@ -50,7 +74,7 @@ function addtele(){
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> 취소 </a>
 상품 카테고리 선택
 <a href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div class="ui-grid-a">
@@ -117,8 +141,22 @@ function addtele(){
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
 <a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
-사진등록
+사진 등록
 <a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<div id="camera-image" class="ui-body ui-body-b" style="background-size:100%;min-height:330px;">
+   </div>
+  <fieldset class="ui-grid-a">
+ <div class="ui-block-a">
+      <button type="button" data-icon="plus" onClick=" getPictureFromCamera();">
+      	카메라
+      </button>
+ </div>
+ <div class="ui-block-b">
+      <button type="button" data-icon="plus" onClick="getPictureFromAlbum();">
+      	갤러리
+      </button>
+ </div>
+  </fieldset>
 
 </div><!-- main끝 -->
 </div><!-- page끝 -->
@@ -209,7 +247,7 @@ function addtele(){
 선착순 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
-<input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
+<input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
 <p>마감 시간</p>
 <input name="deadline_time" id="deadline_time" type="time" value="">
@@ -228,7 +266,7 @@ function addtele(){
 랜덤 방식
 <a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
-<input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
+<input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
 <p>마감 시간</p>
 <input name="deadline_time" id="deadline_time" type="time" value="">
@@ -257,7 +295,7 @@ function addtele(){
 <butten class="ui-btn ui-btn-inline ui-mini" id="telePlus" onclick="document.getElementById('demo').innerHTML = addtele()"> 문제 추가하기 </butten>
 <hr>
 <p>선정인원</p>
-<input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
+<input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
 <p>마감 시간</p>
 <input name="deadline_time" id="deadline_time" type="time" value="">
@@ -279,7 +317,7 @@ function addtele(){
 <input type="text" name="storyTitle" id="storyTitle">
 <hr>
 <p>선정인원</p>
-<input name="number" id="number-pattern" type="number" pattern="[1-9]" value="">
+<input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
 <p>마감 시간</p>
 <input name="deadline_time" id="deadline_time" type="time" value="">
@@ -346,11 +384,10 @@ function addtele(){
 <a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 나눔글 작성
 <a href="#nanum8" class="ui-btn ui-btn-inline ui-mini"> 완료 </a>
-
+<form>
  <input type="text" name="nanumTitle" id="nanumTitle" placeholder="나눔글 제목">
- 
- <textarea name="nanumContents" id="nanumContents"></textarea>
- 
+ <textarea rows="50" cols="100" name="nanumContents" id="nanumContents" placeholder="나눔하실 물품에 대해 설명해 주세요" required></textarea>
+ </form>
 </div><!-- main끝 -->
 </div><!-- page끝 -->
 
