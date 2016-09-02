@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nanushare.springproject.domain.member.MemberVO;
 import com.nanushare.springproject.service.member.MemberService;
@@ -22,6 +23,7 @@ public class MemberController {
 	public String join1(){
 		return "member/join1"; // 약관
 	}
+	
 	@RequestMapping(value="/join2", method=RequestMethod.GET)
 	public void join(MemberVO memberVO) throws Exception{
 			System.out.println("회원가입 get ");
@@ -29,7 +31,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/join2", method=RequestMethod.POST)
-	public String joinPost(MemberVO memberVO) throws Exception {
+	public String joinPost(MemberVO memberVO, RedirectAttributes rttr) throws Exception {
 		// 생년월일
 		System.out.println("생년월일"+memberVO.getMemBrithdate());
 		System.out.println("닉네임"+memberVO.getNickname());
@@ -52,8 +54,17 @@ public class MemberController {
 			memberVO.setMemPostcode2("null");
 		}
 		
+		System.out.println("생년월일"+memberVO.getMemBrithdate());
+		System.out.println("닉네임"+memberVO.getNickname());
+		System.out.println(memberVO.getMemId());
+		System.out.println(memberVO.getMemGender());
+		
+		
 		memberService.memberJoin(memberVO);
 		System.out.println("회원정보 입력 후 ");
+
+		//jsp로 성공 메시지 전달(1회용)
+		rttr.addFlashAttribute("msg", "회원 가입 성공");
 		//return "member/join3";
 		return "redirect:/member/join3";
 	}
@@ -66,6 +77,7 @@ public class MemberController {
 	        }      
 	        return result;
 	    }
+	 
 	 //login.jsp + 회원가입 성공 메시지
 	 @RequestMapping(value="/join3", method=RequestMethod.GET)
 	 public void joinlogin(Model model) throws Exception {

@@ -63,6 +63,7 @@ public class AnnounceController {
 	// 상세페이지
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public void read(@RequestParam("annId") int annId, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+		//@ModelAttribute("cri") - 자동으로 cri 객체를 뷰까지 전달함
 		model.addAttribute(announceService.read(annId));
 	}
 	

@@ -7,22 +7,22 @@
 <link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:799px)">
 <meta name="viewport" content="width=device-width,initial-sacle=1">
 
-<link rel="stylesheet"href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
 <style>
   .ui-bar-f {
-    color: white;
-    background-color: lightgreen;
-    border:0px;
+    color: white !important;
+    background-color: lightgreen !important;
+    border:0px !important;
 }
   </style>
 </head>
 
 <body>
 <div data-role="page" id="join1">
-<div data-role="header"  data-theme="f">
+<div data-role="header" class="ui-bar-f" data-theme="f">
 <a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1>Nanushare</h1>
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
