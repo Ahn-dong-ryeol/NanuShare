@@ -28,6 +28,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				#{nanumWriter},#{nanumMethod},#{nanumStroyTitle});
 	</insert>
 	
+	<select id="listSearch" resultType="com.nanushare.springproject.domain.nanum.NanumVO">
+		<![CDATA[
+			select *
+			from NANUSHARE_TB
+			where na_title like CONCAT('%',#{keyword},'%')
+		]]>
+	</select>
 	
 
 	

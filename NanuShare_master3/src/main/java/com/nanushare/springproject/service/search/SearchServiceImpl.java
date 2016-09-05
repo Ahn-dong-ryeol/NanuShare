@@ -1,0 +1,23 @@
+package com.nanushare.springproject.service.search;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.nanushare.springproject.domain.nanum.NanumVO;
+import com.nanushare.springproject.repository.search.SearchRepository;
+
+@Service
+public class SearchServiceImpl implements SearchService {
+
+	@Inject
+	private SearchRepository searchRepository;
+	
+	@Override
+	public List<NanumVO> listSearch(String keyword) throws Exception{
+		return searchRepository.listSearch(keyword);
+	}
+
+}
