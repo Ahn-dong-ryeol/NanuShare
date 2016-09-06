@@ -4,14 +4,21 @@ public class ProdCateVO {
 	private int prodCateId;
 	private String prodCateName;
 	private int prodCateOrder;
-	private int prodCateParantId;
+	private int prodCateParentId;
 	
-	public ProdCateVO(int prodCateId, String prodCateName, int prodCateOrder, int prodCateParantId) {
+	public ProdCateVO(){}
+	
+	public ProdCateVO(int prodCateId, String prodCateName, int prodCateOrder, int prodCateParentId) {
 		super();
 		this.prodCateId = prodCateId;
 		this.prodCateName = prodCateName;
 		this.prodCateOrder = prodCateOrder;
-		this.prodCateParantId = prodCateParantId;
+		this.prodCateParentId = prodCateParentId;
+	}
+
+	public ProdCateVO(int prodCateParentId) {
+		super();
+		this.prodCateParentId = prodCateParentId;
 	}
 
 	public int getProdCateId() {
@@ -38,18 +45,18 @@ public class ProdCateVO {
 		this.prodCateOrder = prodCateOrder;
 	}
 
-	public int getProdCateParantId() {
-		return prodCateParantId;
+	public int getprodCateParentId() {
+		return prodCateParentId;
 	}
 
-	public void setProdCateParantId(int prodCateParantId) {
-		this.prodCateParantId = prodCateParantId;
+	public void setprodCateParentId(int prodCateParentId) {
+		this.prodCateParentId = prodCateParentId;
 	}
 
 	@Override
 	public String toString() {
 		return "ProdCateVO [prodCateId=" + prodCateId + ", prodCateName=" + prodCateName + ", prodCateOrder="
-				+ prodCateOrder + ", prodCateParantId=" + prodCateParantId + "]";
+				+ prodCateOrder + ", prodCateParentId=" + prodCateParentId + "]";
 	}
 	
 	

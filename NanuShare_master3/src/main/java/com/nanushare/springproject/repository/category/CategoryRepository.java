@@ -7,5 +7,5 @@ import com.nanushare.springproject.domain.category.ProdCateVO;
 
 public interface CategoryRepository {
 
-	public List<ProdCateVO> selectProdCate(int prodCateParantId, int prodCateOrder);
+	public List<ProdCateVO> selectProdCate(ProdCateVO prodCateVO);
 }

@@ -11,32 +11,33 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.nanushare.springproject.domain.nanum.NanumVO;
-import com.nanushare.springproject.repository.search.SearchRepository;
+import com.nanushare.springproject.domain.category.ProdCateVO;
+import com.nanushare.springproject.repository.category.CategoryRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
 		locations={"classpath:spring/*.xml","file:src/main/webapp/WEB-INF/mvc-config.xml"})
-public class SearchDAOTest {
-
-	private static final Logger logger = LoggerFactory.getLogger(SearchDAOTest.class);
+public class categoryDAOTest {
+	
+private static final Logger logger = LoggerFactory.getLogger(categoryDAOTest.class);
 	
 	@Inject
-	private SearchRepository searchDao;
+	private CategoryRepository categoryDao;
 	
 	@Test
 	public void testListSearch() throws Exception {
 		
-		String keyword = "스마트폰";
+		ProdCateVO prodCateVO = new ProdCateVO(100);
 		
-		List<NanumVO> list = searchDao.listSearch(keyword);
+		List<ProdCateVO> mainCateList = categoryDao.selectProdCate(prodCateVO);
 		
-		logger.info("list의 크기 : "+list.size());
+		logger.info("mainCateList의 크기 : "+mainCateList.size());
 		
-		for(NanumVO nanumVO : list){
-			logger.info(nanumVO.getNanumTitle()+" : "+nanumVO.getNanumContent());
+		for(ProdCateVO mainCateVO : mainCateList){
+			logger.info(mainCateVO.getProdCateName()+":"+mainCateVO.getProdCateId());
 		}
 		
 		logger.info("=========================================");
 	}
+	
 }

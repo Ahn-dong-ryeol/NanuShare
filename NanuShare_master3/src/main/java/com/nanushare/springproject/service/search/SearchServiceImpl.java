@@ -20,4 +20,9 @@ public class SearchServiceImpl implements SearchService {
 		return searchRepository.listSearch(keyword);
 	}
 
+	@Override
+	public List<NanumVO> cateListSearch(int prodCateId) throws Exception{
+		return searchRepository.cateListSearch(prodCateId);
+	}
+
 }

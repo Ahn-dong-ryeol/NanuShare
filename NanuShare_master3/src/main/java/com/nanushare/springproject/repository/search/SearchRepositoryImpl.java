@@ -23,4 +23,9 @@ public class SearchRepositoryImpl implements SearchRepository {
 		return session.selectList(namespace + ".listSearch", keyword);
 	}
 
+	@Override
+	public List<NanumVO> cateListSearch(int ProdCateId) throws Exception {
+		return null;
+	}
+
 }

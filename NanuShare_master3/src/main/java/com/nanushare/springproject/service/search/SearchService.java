@@ -7,4 +7,6 @@ import com.nanushare.springproject.domain.nanum.NanumVO;
 public interface SearchService {
 	
 	public List<NanumVO> listSearch(String keyword) throws Exception;
+
+	public List<NanumVO> cateListSearch(int prodCateId) throws Exception;
 }
