@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.nanushare.springproject.domain.nanum.NanumVO;
 import com.nanushare.springproject.service.nanum.NanumService;
@@ -17,15 +18,13 @@ public class NanumController {
 	NanumService nanumService;
 	
 	//나눔글 작성 페이지 이동
-	@RequestMapping("/nanumwrite")//수정 
-	public String nanum(){
-		
-		return "/nanum/nanumwrite";
+	@RequestMapping(value="/nanumWrite", method=RequestMethod.GET)//수정 
+	public void nanumWrite(){
 	}
 	
 	//나눔글 작성 처리
-	@RequestMapping("/nanuminsert")//수정 
-	public String nanumInsert(NanumVO nanumVO){
+	@RequestMapping(value="/nanumWrite", method=RequestMethod.POST)//수정 
+	public String nanumWrite(NanumVO nanumVO){
 		//테스트용 데이터 입력
 		System.out.println("1. 테스트용 데이터 삽입!");
 		nanumVO.setNanumId(1);
@@ -44,7 +43,7 @@ public class NanumController {
 		nanumService.nanumInsert(nanumVO);
 		System.out.println("4. 삽입완료");
 		
-		return "/nanum/nanumfinish";
+		return "/nanum/nanumfinish";//나눔글 목록 이동으로 수정.
 	}
 
 }
