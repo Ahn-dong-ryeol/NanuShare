@@ -2,6 +2,7 @@ package com.nanushare.springproject.repository.comment;
 
 import java.util.List;
 
+import com.nanushare.springproject.domain.announce.Criteria;
 import com.nanushare.springproject.domain.comment.CommentVO;
 
 public interface CommentRepository {
@@ -17,4 +18,8 @@ public interface CommentRepository {
 	
 	// 댓글 삭제
 	public void delete(Integer nanuCmId) throws Exception;
+	
+	public List<CommentVO> listMore(Integer nanumId, Criteria cri) throws Exception;
+	
+	public int count(Integer nanumId) throws Exception;
 }

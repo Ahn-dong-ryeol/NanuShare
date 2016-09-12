@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.nanushare.springproject.domain.announce.Criteria;
 import com.nanushare.springproject.domain.comment.CommentVO;
 import com.nanushare.springproject.repository.comment.CommentRepository;
 
@@ -21,7 +22,7 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public List<CommentVO> listReply(Integer nanumId) throws Exception {
+	public List<CommentVO> listComment(Integer nanumId) throws Exception {
 		return dao.list(nanumId);
 	}
 
@@ -33,6 +34,16 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public void removeComment(Integer nanuCmId) throws Exception {
 		dao.delete(nanuCmId);
+	}
+
+	@Override
+	public List<CommentVO> listMore(Integer nanumId, Criteria cri) throws Exception {
+		return dao.listMore(nanumId, cri);
+	}
+
+	@Override
+	public int count(Integer nanumId) throws Exception {
+		return dao.count(nanumId);
 	}
 	
 	

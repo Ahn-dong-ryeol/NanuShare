@@ -35,6 +35,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from NANU_COMMENT_TB where nanu_cm_id = #{nanu_cm_id}
 	</delete>
 	
-
+	<select id="listMore" resultMap="commentMap">
+		select *
+		from NANU_COMMENT_TB
+		where na_id = #{nanumId}
+		order by nanu_cm_id desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<select id="count">
+		select count(bno)
+		form NANU_COMMENT_TB
+		where na_id = #{nanumId}
+	</select>
 
 </mapper>
