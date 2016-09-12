@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="na_delete_check" property="nanumDeleteCheck"/>
 		<result column="na_hits" property="nanumHits"/>
 		<result column="category_id" property="nanumCategoryId"/>
-		<result column="na_wiriter" property="nanumWriter"/>
+		<result column="na_writer" property="nanumWriter"/>
 		<result column="na_method" property="nanumMethod"/>
 		<result column="na_story_title" property="nanumStroyTitle"/>
 	</resultMap>
@@ -28,7 +28,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				#{nanumWriter},#{nanumMethod},#{nanumStroyTitle});
 	</insert>
 	
+	<select id="listSearch" resultType="com.nanushare.springproject.domain.nanum.NanumVO" resultMap="nanumMap">
+		<![CDATA[
+			select *
+			from NANUSHARE_TB
+			where na_title like CONCAT('%',#{keyword},'%')
+			order by na_write_date desc
+		]]>
+	</select>
 	
+	<select id="cateListSearch" resultType="com.nanushare.springproject.domain.nanum.NanumVO" resultMap="nanumMap">
+		<![CDATA[
+			select *
+			from NANUSHARE_TB
+			where category_id = #{ProdCateId}
+			order by na_write_date desc
+		]]>
+	</select>
 
 	
 </mapper>

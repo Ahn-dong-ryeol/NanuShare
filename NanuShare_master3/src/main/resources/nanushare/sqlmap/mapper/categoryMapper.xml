@@ -7,15 +7,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="prod_cate_id" property="prodCateId"/>
 		<result column="prod_cate_name" property="prodCateName"/>
 		<result column="prod_cate_order" property="prodCateOrder"/>
-		<result column="prod_cate_parent_id" property="prodCateParantId"/>
+		<result column="prod_cate_parent_id" property="prodCateParentId"/>
 	</resultMap>
 	
-	<!-- 상품카테고리 select -->
-	<select id="selectProdCate" resultMap="prodCateMap">
-		SELECT * FROM PRODUCT_CATE_TB 
-		WHERE #{prodCateParantId} IS NULL 
-		ORDER BY #{prodCateOrder};
+	<!-- 상품카테고리 select, prodCateParentId를 받아 하위 카테고리를 조회, prodCateParentId가 0이면 상위cate 조회-->
+	<select id="selectProdCate" resultMap="prodCateMap" resultType="com.nanushare.springproject.domain.category.ProdCateVO"><!-- //resultMap="prodCateMap"  -->
+		 select prod_cate_id, prod_cate_name, prod_cate_order, prod_cate_parent_id
+		 from PRODUCT_CATE_TB
+	 <if test="prodCateParentId==0">
+	 	where Prod_cate_parent_id is null
+	 </if>
+	 <if test="prodCateParentId!=0">
+	 	where Prod_cate_parent_id = #{prodCateParentId}
+	 </if>
+		 order by Prod_cate_order;
 	</select>
-
 		
 </mapper>

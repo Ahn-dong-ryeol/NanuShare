@@ -19,8 +19,8 @@ public class CategoryServiceImpl implements CategoryService {
 	CategoryRepository categoryRepository;*/
 
 	@Override
-	public List<ProdCateVO> selectProdCate(int prodCateParantId, int prodCateOrder) {
-		List<ProdCateVO> resultVO = categoryRepository.selectProdCate(prodCateParantId,prodCateOrder);
+	public List<ProdCateVO> selectProdCate(ProdCateVO prodCateVO) {
+		List<ProdCateVO> resultVO = categoryRepository.selectProdCate(prodCateVO);
 		return resultVO;
 	}
 
