@@ -27,7 +27,7 @@ public class NanumController {
 	
 	//나눔글 작성 처리
 	@RequestMapping(value="/nanumWrite", method=RequestMethod.POST)//수정 
-	public String nanumWrite(NanumVO nanumVO){
+	public String nanumWrite(NanumVO nanumVO) throws Exception{
 		//테스트용 데이터 입력
 		System.out.println("1. 테스트용 데이터 삽입!");
 		nanumVO.setNanumId(1);

@@ -4,7 +4,8 @@ import com.nanushare.springproject.domain.nanum.NanumVO;
 
 public interface NanumRepository {
 	//나눔 글 작성 처리 
-	int nanumInsert(NanumVO nanumVO);
+	public int nanumInsert(NanumVO nanumVO)throws Exception;
+	
 	//이미지 정보 저장 
 	public void addAttach(String fullName, int nanumId) throws Exception;
 	
