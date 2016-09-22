@@ -31,11 +31,24 @@ public class UploadFileUtils {
 		
 		FileCopyUtils.copy(fileData, target);
 		
-		//String formatName = originalName.substring(originalName.lastIndexOf(".")+1);
-		// if-else구문으로 이미지파일 구분
-		String uploadedFileName = makeThumbnail(uploadPath, savedPath, savedName);
+		String formatName = originalName.substring(originalName.lastIndexOf(".")+1);
+		
+		String uploadedFileName = null;
+		
+		if(MediaUtils.getMediaType(formatName) != null){
+			uploadedFileName = makeThumbnail(uploadPath, savedPath, savedName);
+		}else{
+			uploadedFileName = makeIcon(uploadPath, savedPath, savedName);
+		}
+		
 		
 		return uploadedFileName;
+	}
+	
+	private static String makeIcon(String uploadPath, String path, String fileName) throws Exception{
+		String iconName = uploadPath + path + File.separator + fileName;
+		
+		return iconName.substring(uploadPath.length()).replace(File.separatorChar, '/');
 	}
 	
 	//파일이 저장될 '년/월/일' 정보 생성

@@ -53,21 +53,38 @@ small{
 				type:'POST',
 				success:function(data){
 					alert(data);
-/*  					var str = "";
 					
-					//console.log(data);
-					//console.log(checkImageType(data));
+					var str="";
 					
 					if(checkImageType(data)){
-						str = "<div>"+"<img src='displayFile?fileName="+data+"'/>" + data +"</div>";
+						str = "<div><a href=displayFile?fileName="+getImageLink(data)+">"
+							  +"<img src='displayFile?fileName="+data+"'/>"
+									  +"</a><small data-src="+data+">X</small></div>";
 					}else{
-						str = "<div><a href='displayFile?fileName="+data"'>" + getOriginalName(data) +"</a></div>";
+						str = "<div>" +
+							 "<a href='displayFile?fileName="+data+"'>"+getOriginalName(data)+"</a>"+
+							 "<small data-src="+data+">X</small></div>";
 					}
-					
-					$(".uploadedList").append(str);  */
+					$(".uploadedList").append(str);
 				}
 			}); 
 		}); 
+ 		
+ 		$(".uploadedList").on("click","small", function(event){
+ 			var that = $(this);
+ 			
+ 			$.ajax({
+ 				url:"/image/deleteFile",
+ 				type:"post",
+ 				data:{fileName:$(this).attr("data-src")},
+ 				dataType:"text",
+ 				success:function(result){
+ 					if(result == 'deleted'){
+ 						that.parent("div").remove();
+ 					}
+ 				}
+ 			});
+ 		});
  		
  		function checkImageType(fileName){
  			var pattern = /jpg|gif|png|jpeg/i;
@@ -82,6 +99,15 @@ small{
  			return fileName.substr(idx);
  		}
 		
+ 		function getImageLink(fileName){
+ 			if(!checkImageType(fileName)){
+ 				return;
+ 			}
+ 			var front = fileName.substr(0,12);
+ 			var end = fileName.substr(12);
+ 			
+ 			return front + end;
+ 		}
 		
 	</script>
 
