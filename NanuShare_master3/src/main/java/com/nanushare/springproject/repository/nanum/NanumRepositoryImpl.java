@@ -26,6 +26,14 @@ public class NanumRepositoryImpl implements NanumRepository{
 	}
 
 	@Override
+	public void addAttach(String fullName, int nanumId) throws Exception {
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("fullName", fullName);
+		paramMap.put("nanumId", nanumId);
+		sqlSession.insert(namespace+".addAttach", paramMap);
+	}
+	
+	@Override
 	public void updateLikeCnt(Integer nanumId, int amount) throws Exception {
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		
@@ -33,7 +41,6 @@ public class NanumRepositoryImpl implements NanumRepository{
 		paramMap.put("amount", amount);
 		
 		sqlSession.update(namespace+".updateLikeCnt",paramMap);
-		
 	}
 
 }

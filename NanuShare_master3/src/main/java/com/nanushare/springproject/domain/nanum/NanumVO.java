@@ -1,5 +1,6 @@
 package com.nanushare.springproject.domain.nanum;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class NanumVO {
@@ -18,13 +19,14 @@ public class NanumVO {
 	private String nanumWriter;
 	private String nanumMethod;
 	private String nanumStroyTitle;
+	private String[] files;
 	private int nanumLikeCnt;
 	
 	public NanumVO(){}
 
 	public NanumVO(int nanumId, String nanumDelibery, String nanumTitle, String nanumContent, Date nanumDate,
 			int nanumChoiceNum, String nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
-			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, int nanumLikeCnt) {
+			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, String[] files, int nanumLikeCnt) {
 		super();
 		this.nanumId = nanumId;
 		this.nanumDelibery = nanumDelibery;
@@ -40,6 +42,7 @@ public class NanumVO {
 		this.nanumWriter = nanumWriter;
 		this.nanumMethod = nanumMethod;
 		this.nanumStroyTitle = nanumStroyTitle;
+		this.files = files;
 		this.nanumLikeCnt = nanumLikeCnt;
 	}
 
@@ -155,6 +158,13 @@ public class NanumVO {
 		this.nanumStroyTitle = nanumStroyTitle;
 	}
 
+	public String[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(String[] files) {
+		this.files = files;
+
 	public int getNanumLikeCnt() {
 		return nanumLikeCnt;
 	}
@@ -170,10 +180,7 @@ public class NanumVO {
 				+ ", nanumEndDate=" + nanumEndDate + ", nanumState=" + nanumState + ", nanumDeleteCheck="
 				+ nanumDeleteCheck + ", nanumHits=" + nanumHits + ", nanumCategoryId=" + nanumCategoryId
 				+ ", nanumWriter=" + nanumWriter + ", nanumMethod=" + nanumMethod + ", nanumStroyTitle="
-				+ nanumStroyTitle  + ", nanumLikeCnt=" + nanumLikeCnt + "]";
+				+ nanumStroyTitle + ", files=" + files + ", nanumLikeCnt=" + nanumLikeCnt + "]";
 	}
-
-	
-	
 
 }

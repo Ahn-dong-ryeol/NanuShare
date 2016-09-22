@@ -47,6 +47,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 	
+	<insert id="addAttch" >
+		insert into IMAGE_TB(img_id, img_save_date, img_identifier) values(#{fullName},NOW(),#{nanumId});
+	</insert>
+	
 	<select id="subcateListSearch" resultMap="nanumMap">
 		select *
 		from NANUSHARE_TB
