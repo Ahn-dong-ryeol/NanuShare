@@ -28,6 +28,11 @@ public class NanumServiceImpl implements NanumService {
 		
 	}
 
+	@Override
+	public void updateLikeCnt(Integer nanumId, int amount) throws Exception {
+		nanumRepository.updateLikeCnt(nanumId, amount);
+	}
+
 	
 
 	

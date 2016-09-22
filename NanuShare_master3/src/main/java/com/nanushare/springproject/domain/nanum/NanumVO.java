@@ -18,12 +18,13 @@ public class NanumVO {
 	private String nanumWriter;
 	private String nanumMethod;
 	private String nanumStroyTitle;
+	private int nanumLikeCnt;
 	
 	public NanumVO(){}
 
 	public NanumVO(int nanumId, String nanumDelibery, String nanumTitle, String nanumContent, Date nanumDate,
 			int nanumChoiceNum, String nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
-			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle) {
+			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, int nanumLikeCnt) {
 		super();
 		this.nanumId = nanumId;
 		this.nanumDelibery = nanumDelibery;
@@ -39,6 +40,7 @@ public class NanumVO {
 		this.nanumWriter = nanumWriter;
 		this.nanumMethod = nanumMethod;
 		this.nanumStroyTitle = nanumStroyTitle;
+		this.nanumLikeCnt = nanumLikeCnt;
 	}
 
 	public int getNanumId() {
@@ -153,6 +155,14 @@ public class NanumVO {
 		this.nanumStroyTitle = nanumStroyTitle;
 	}
 
+	public int getNanumLikeCnt() {
+		return nanumLikeCnt;
+	}
+
+	public void setNanumLikeCnt(int nanumLikeCnt) {
+		this.nanumLikeCnt = nanumLikeCnt;
+	}
+
 	@Override
 	public String toString() {
 		return "NanumVO [nanumId=" + nanumId + ", nanumDelibery=" + nanumDelibery + ", nanumTitle=" + nanumTitle
@@ -160,7 +170,7 @@ public class NanumVO {
 				+ ", nanumEndDate=" + nanumEndDate + ", nanumState=" + nanumState + ", nanumDeleteCheck="
 				+ nanumDeleteCheck + ", nanumHits=" + nanumHits + ", nanumCategoryId=" + nanumCategoryId
 				+ ", nanumWriter=" + nanumWriter + ", nanumMethod=" + nanumMethod + ", nanumStroyTitle="
-				+ nanumStroyTitle + "]";
+				+ nanumStroyTitle  + ", nanumLikeCnt=" + nanumLikeCnt + "]";
 	}
 
 	

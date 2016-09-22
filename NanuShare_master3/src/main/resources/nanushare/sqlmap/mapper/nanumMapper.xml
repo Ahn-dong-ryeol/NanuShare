@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="na_writer" property="nanumWriter"/>
 		<result column="na_method" property="nanumMethod"/>
 		<result column="na_story_title" property="nanumStroyTitle"/>
+		<result column="na_like_cnt" property="nanumLikeCnt"/>
 	</resultMap>
 	
 	<insert id="nanumInsert" parameterType="com.nanushare.springproject.domain.nanum.NanumVO" useGeneratedKeys="true" keyProperty="id">
@@ -53,5 +54,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		and na_title like CONCAT('%',#{keyword},'%')
 		order by na_write_date desc
 	</select>
+	
+	<update id="updateLikeCnt">
+		update NANUSHARE_TB set na_like_cnt = na_like_cnt + #{amount} where na_id = #{nanumId}
+	</update>
 
 </mapper>
