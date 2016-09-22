@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.nanushare.springproject.repository.comment.CommentRepository">
 	<resultMap type="com.nanushare.springproject.domain.comment.CommentVO" id="commentMap">
 		<result column="nanu_cm_id" property="nanuCmId"/>
-		<result column="nanu_cm_content" property="nanuCmContent"/>
+		<result column="nanu_cm_contents" property="nanuCmContent"/>
 		<result column="nanu_first_write_date" property="nanuFirstWriteDate"/>
 		<result column="nanu_last_modify_date" property="nanuLastModifyDate"/>
 		<result column="na_id" property="nanumId"/>
@@ -21,13 +21,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="create">
-		insert into NANU_COMMENT_TB(nanu_cm_content, nanu_first_write_date, nanu_last_modify_date, na_id, mem_id)
+		insert into NANU_COMMENT_TB(nanu_cm_contents, nanu_first_write_date, nanu_last_modify_date, na_id, mem_id)
 		values (#{nanuCmContent}, now(), now(), #{nanumId}, #{memId})
 	</insert>
 	
 	<update id="update">
 		update NANU_COMMENT_TB
-		set nanu_cm_content = #{nanuCmContent}, nanu_last_modify_date = now()
+		set nanu_cm_contents = #{nanuCmContent}, nanu_last_modify_date = now()
 		where nanu_cm_id = #{nanuCmId}
 	</update>
 	
@@ -43,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		limit #{cri.pageStart}, #{cri.perPageNum}
 	</select>
 	
-	<select id="count">
+	<select id="count" resultMap="commentMap">
 		select count(bno)
 		form NANU_COMMENT_TB
 		where na_id = #{nanumId}

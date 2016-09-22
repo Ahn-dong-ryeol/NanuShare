@@ -2,7 +2,10 @@ package com.nanushare.springproject.controller.nanum;
 
 import javax.inject.Inject;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -44,6 +47,20 @@ public class NanumController {
 		System.out.println("4. 삽입완료");
 		
 		return "/nanum/nanumfinish";//나눔글 목록 이동으로 수정.
+	}
+	
+	//좋아요
+	@RequestMapping(value="/like/{nanumId}", method=RequestMethod.GET)
+	public ResponseEntity<String> nanumLike(@PathVariable("nanumId") Integer nanumId){
+		ResponseEntity<String> entity = null;
+		try{
+			nanumService.updateLikeCnt(nanumId, 1);
+			entity = new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		}catch(Exception e){
+			e.printStackTrace();
+			entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		return entity;
 	}
 
 }

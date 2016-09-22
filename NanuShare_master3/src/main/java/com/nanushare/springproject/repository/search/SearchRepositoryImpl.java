@@ -1,6 +1,8 @@
 package com.nanushare.springproject.repository.search;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -25,7 +27,15 @@ public class SearchRepositoryImpl implements SearchRepository {
 
 	@Override
 	public List<NanumVO> cateListSearch(int ProdCateId) throws Exception {
-		return null;
+		return session.selectList(namespace+".cateListSearch", ProdCateId);
+	}
+
+	@Override
+	public List<NanumVO> subListSearch(Integer prodCateId, String keyword) throws Exception {
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("prodCateId", prodCateId);
+		paramMap.put("keyword", keyword);
+		return session.selectList(namespace+".subcateListSearch",paramMap);
 	}
 
 }

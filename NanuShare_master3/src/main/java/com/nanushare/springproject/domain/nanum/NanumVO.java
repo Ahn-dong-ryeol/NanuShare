@@ -20,12 +20,13 @@ public class NanumVO {
 	private String nanumMethod;
 	private String nanumStroyTitle;
 	private String[] files;
+	private int nanumLikeCnt;
 	
 	public NanumVO(){}
 
 	public NanumVO(int nanumId, String nanumDelibery, String nanumTitle, String nanumContent, Date nanumDate,
 			int nanumChoiceNum, String nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
-			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, String[] files) {
+			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, String[] files, int nanumLikeCnt) {
 		super();
 		this.nanumId = nanumId;
 		this.nanumDelibery = nanumDelibery;
@@ -42,6 +43,7 @@ public class NanumVO {
 		this.nanumMethod = nanumMethod;
 		this.nanumStroyTitle = nanumStroyTitle;
 		this.files = files;
+		this.nanumLikeCnt = nanumLikeCnt;
 	}
 
 	public int getNanumId() {
@@ -162,6 +164,13 @@ public class NanumVO {
 
 	public void setFiles(String[] files) {
 		this.files = files;
+
+	public int getNanumLikeCnt() {
+		return nanumLikeCnt;
+	}
+
+	public void setNanumLikeCnt(int nanumLikeCnt) {
+		this.nanumLikeCnt = nanumLikeCnt;
 	}
 
 	@Override
@@ -171,7 +180,7 @@ public class NanumVO {
 				+ ", nanumEndDate=" + nanumEndDate + ", nanumState=" + nanumState + ", nanumDeleteCheck="
 				+ nanumDeleteCheck + ", nanumHits=" + nanumHits + ", nanumCategoryId=" + nanumCategoryId
 				+ ", nanumWriter=" + nanumWriter + ", nanumMethod=" + nanumMethod + ", nanumStroyTitle="
-				+ nanumStroyTitle + ", files=" + Arrays.toString(files) + "]";
+				+ nanumStroyTitle + ", files=" + files + ", nanumLikeCnt=" + nanumLikeCnt + "]";
 	}
 
 }

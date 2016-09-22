@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.nanushare.springproject.domain.category.ProdCateVO;
+import com.nanushare.springproject.domain.nanum.NanumVO;
 import com.nanushare.springproject.service.category.CategoryService;
 import com.nanushare.springproject.service.search.SearchService;
 
@@ -56,6 +57,13 @@ public class SearchController {
 		
 		// 해당 카테고리 나눔글 목록
 		model.addAttribute("subNanumList",searchService.cateListSearch(prodCateParentId));
+	}
+	
+	//상세 카테고리 내 키워드로 검색
+	public void subSearchResult(@ModelAttribute("cate") Integer prodCateId, @ModelAttribute("keyword") String keyword, Model model) throws Exception {
+		List<NanumVO> subCateSearchList = searchService.subListSearch(prodCateId, keyword);
+		// 해당 키워드로 검색된 나눔글 리스트 반환
+		model.addAttribute("subCateSearchList",subCateSearchList);
 	}
 	
 	

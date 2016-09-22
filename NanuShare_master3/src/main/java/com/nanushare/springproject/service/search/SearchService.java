@@ -9,4 +9,6 @@ public interface SearchService {
 	public List<NanumVO> listSearch(String keyword) throws Exception;
 
 	public List<NanumVO> cateListSearch(int prodCateId) throws Exception;
+	
+	public List<NanumVO> subListSearch(Integer prodCateId, String keyword) throws Exception;
 }

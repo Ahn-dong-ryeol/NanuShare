@@ -8,4 +8,7 @@ public interface NanumRepository {
 	//이미지 정보 저장 
 	public void addAttach(String fullName, int nanumId) throws Exception;
 	
+	// 좋아요 수 증가
+	public void updateLikeCnt(Integer nanumId, int amount) throws Exception;
+	
 }

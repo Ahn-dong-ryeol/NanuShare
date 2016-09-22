@@ -7,8 +7,8 @@ public class CommentVO {
 	private String nanuCmContent;
 	private Date nanuFirstWriteDate;
 	private Date nanuLastModifyDate;
-	private String nanumId;
-	private int memId;
+	private int nanumId;
+	private String memId;
 	
 	public int getNanuCmId() {
 		return nanuCmId;
@@ -34,16 +34,16 @@ public class CommentVO {
 	public void setNanuLastModifyDate(Date nanuLastModifyDate) {
 		this.nanuLastModifyDate = nanuLastModifyDate;
 	}
-	public String getNanumId() {
+	public int getNanumId() {
 		return nanumId;
 	}
-	public void setNanumId(String nanumId) {
+	public void setNanumId(int nanumId) {
 		this.nanumId = nanumId;
 	}
-	public int getMemId() {
+	public String getMemId() {
 		return memId;
 	}
-	public void setMemId(int memId) {
+	public void setMemId(String memId) {
 		this.memId = memId;
 	}
 	@Override
