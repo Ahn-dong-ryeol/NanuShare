@@ -21,6 +21,9 @@
     background-color: lightgreen;
     border:0px;
 }
+.ui-content {
+	background-color : #fff;
+}
 .ui-content > .ui-grid-a > img {
 		margin : auto;
 	}
@@ -379,7 +382,7 @@ function addForm() {
 <div data-role="page" id="nanum7">
 <div data-role="header" data-theme="f">
 <a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
 <a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
