@@ -164,6 +164,7 @@ public class NanumVO {
 
 	public void setFiles(String[] files) {
 		this.files = files;
+	}
 
 	public int getNanumLikeCnt() {
 		return nanumLikeCnt;
