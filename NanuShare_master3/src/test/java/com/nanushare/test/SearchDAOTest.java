@@ -28,8 +28,10 @@ public class SearchDAOTest {
 	public void testListSearch() throws Exception {
 		
 		String keyword = "스마트폰";
+		Integer prodCateId = 501;
 		
-		List<NanumVO> list = searchDao.listSearch(keyword);
+//		List<NanumVO> list = searchDao.listSearch(keyword);
+		List<NanumVO> list = searchDao.subListSearch(prodCateId ,keyword);
 		
 		logger.info("list의 크기 : "+list.size());
 		

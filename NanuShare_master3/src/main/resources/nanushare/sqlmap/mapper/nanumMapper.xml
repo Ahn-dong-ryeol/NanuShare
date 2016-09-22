@@ -45,6 +45,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			order by na_write_date desc
 		]]>
 	</select>
-
 	
+	<select id="subcateListSearch" resultMap="nanumMap">
+		select *
+		from NANUSHARE_TB
+		where category_id = #{prodCateId}
+		and na_title like CONCAT('%',#{keyword},'%')
+		order by na_write_date desc
+	</select>
+
 </mapper>
