@@ -17,7 +17,7 @@ public class NanumServiceImpl implements NanumService {
 	NanumRepository nanumRepository;*/
 	
 	//나눔글 작성 처리
-	public void nanumInsert(NanumVO nanumVO) {
+	public void nanumInsert(NanumVO nanumVO)throws Exception {
 		System.out.println("2. NanumService 진입"+nanumVO.getNanumTitle());
 		int resultId = nanumRepository.nanumInsert(nanumVO);
 		if((Integer)resultId == null){
