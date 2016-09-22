@@ -6,19 +6,40 @@
 <head>
    <title>Home</title>
 <meta name="viewport" content="user-scalable=no,width=divice-width"/>
-<!-- <link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:799px)">  -->
+<link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:799px)">
 <meta name="viewport" content="width=device-width,initial-sacle=1">
 
+<link rel="stylesheet" href="./resources/css/sample.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet"href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
-<script>
-function addtele(){
-	var tele = 
-		"fuck you"
-	return tele;
+<style type="text/css">
+.ui-bar-f {
+    color: white;
+    background-color: lightgreen;
+    border:0px;
 }
+.ui-content > .ui-grid-a > img {
+		margin : auto;
+	}
+	.ui-content {
+		text-align : center;
+	}
+	.ui-content > .ui-grid-a {
+		padding-top : 50px;
+	}
+	.ui-content > input {
+		padding-top : 50px;
+	}
+	table {
+		border-collapse : collapse;
+	}
+
+</style>
+
+<script>
 function onSuccess($imageData){
 	$('#camera-image').
 		css({'background-image':'url('+$imageData + ')',
@@ -39,44 +60,25 @@ function getPictureFromAlbum(){
 			 destinationType:navigator.camera.DestinationType.FILE_URI,
 			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY} );
 }
-</script>
-
-<style>
-  .ui-bar-f {
-    color: white;
-    background-color: lightgreen;
-    border:0px;
+function addForm() {
+	var form = $("#teleForm");
+	$("#demo").html(form.html());
 }
-	.ui-content > .ui-grid-a > img {
-		margin : auto;
-	}
-	.ui-content {
-		text-align : center;
-	}
-	.ui-content > .ui-grid-a {
-		padding-top : 50px;
-	}
-	.ui-content > input {
-		padding-top : 50px;
-	}
-	table {
-		border-collapse : collapse;
-	}
-</style>
+</script>
 
 </head>
 <body>
 
-<div data-role="page" id="nanum1">
+<div data-role="page" id="nanum1" >
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> 취소 </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> 취소 </a>
 상품 카테고리 선택
-<a href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum2" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div class="ui-grid-a">
       <div class="ui-block-a">
       <img src="/resources/images/sample_icon.jpg" alt="furniture_icon" width="80" height="80"/>
@@ -108,14 +110,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum2">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 상세 카테고리 선택
-<a href="#nanum3" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum3" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <input type="search" name="search" id="search" placeholder="상품의 종류를 입력하세요."> <!-- 검색 -->
 	<table>
 		<tbody>
@@ -135,14 +137,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum3">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 사진 등록
-<a href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <div id="camera-image" class="ui-body ui-body-b" style="background-size:100%;min-height:330px;">
    </div>
   <fieldset class="ui-grid-a">
@@ -163,12 +165,12 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum4">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 나눔방식 선택
 <a href="#blockPopup1" data-rel="popup" class="ui-btn ui-btn-inline ui-mini" data-position-to="window"> >> </a>
 <div class="ui-grid-solo">
@@ -187,7 +189,7 @@ function getPictureFromAlbum(){
       <hr>
       </div>
       <div class="ui-block-a">
-       <a href="#nanum5-2">
+       <a data-ajax=false href="#nanum5-2">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
       		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
@@ -201,7 +203,7 @@ function getPictureFromAlbum(){
       	<hr>
       </div>
       <div class="ui-block-a">
-       <a href="#nanum5-3">
+       <a data-ajax=false href="#nanum5-3">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
       		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
@@ -215,7 +217,7 @@ function getPictureFromAlbum(){
       	<hr>
       </div>
       <div class="ui-block-a">
-       <a href="#nanum5-4">
+       <a data-ajax=false href="#nanum5-4">
       	<div class="ui-grid-a">
       		<div class="ui-block-a">
       		<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
@@ -238,14 +240,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum5-1">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 선착순 방식
-<a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
 <input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
@@ -257,14 +259,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum5-2">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 랜덤 방식
-<a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>선정인원</p>
 <input name="number" id="number-pattern" type="number" min="1" max="99" value="">
 <hr>
@@ -276,23 +278,23 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum5-3">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false  href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 텔레파시 방식
-<a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>텔레파시 문제</p>
 <form method="post" action="#" id="teleForm">
         <input type="text" id="answer1" placeholder="첫번째 텔레파시">
         <input type="radio" name="telepathy" id="answer1" value="answer1">
         <input type="text" id="answer2" placeholder="두번째 텔레파시">
         <input type="radio" name="telepathy" id="answer2" value="answer2">
-</form>
-<p id="demo"></p>
-<butten class="ui-btn ui-btn-inline ui-mini" id="telePlus" onclick="document.getElementById('demo').innerHTML = addtele()"> 문제 추가하기 </butten>
+</form> 
+<div id="demo"></div>
+<button class="ui-btn ui-btn-inline ui-mini" id="telePlus" onclick="addForm()"> 문제 추가하기 </button>
 <hr>
 <p>선정인원</p>
 <input name="number" id="number-pattern" type="number" min="1" max="99" value="">
@@ -305,14 +307,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum5-4">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 사연 방식
-<a href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
+<a data-ajax=false href="#nanum6" class="ui-btn ui-btn-inline ui-mini"> >> </a>
 <p>사연 양식</p>
 <input type="text" name="storyTitle" id="storyTitle">
 <hr>
@@ -327,38 +329,38 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum6">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 배송 방식 선택
 <a href="#blockPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-mini" data-position-to="window"> >> </a>
 <div class="ui-grid-solo">
       <div class="ui-block-a" >
-      <a href="#nanum7">
+      <a data-ajax=false href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">택배 배송</p>
       </a>
       <hr>
       </div>
       <div class="ui-block-a">
-      <a href="#nanum7">
+      <a data-ajax=false href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">직접 거래</p>  	
       </a>	
       	<hr>
       </div>
       <div class="ui-block-a">
-      <a href="#nanum7">
+      <a data-ajax=false href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">우편 배송</p>	
       </a>
       	<hr>
       </div>
       <div class="ui-block-a">
-      <a href="#nanum7">
+      <a data-ajax=false href="#nanum7">
       	<img src="/resources/images/sample_icon.jpg" width="90px" height="90px">
       	<p style="font-weight : bold">기프티콘</p>
       </a>
@@ -376,14 +378,14 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum7">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 <h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
-<a href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
+<a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 나눔글 작성
-<a href="#nanum8" class="ui-btn ui-btn-inline ui-mini"> 완료 </a>
+<a data-ajax=false href="#nanum8" class="ui-btn ui-btn-inline ui-mini"> 완료 </a>
 <form>
  <input type="text" name="nanumTitle" id="nanumTitle" placeholder="나눔글 제목">
  <textarea rows="50" cols="100" name="nanumContents" id="nanumContents" placeholder="나눔하실 물품에 대해 설명해 주세요" required></textarea>
@@ -393,15 +395,15 @@ function getPictureFromAlbum(){
 
 <div data-role="page" id="nanum8">
 <div data-role="header" data-theme="f">
-<a href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
-<h1><a href="/">Nanushare</a></h1>
-<a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+<a data-ajax=false href="#myMenu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+<h1><a data-ajax=false href="/">Nanushare</a></h1>
+<a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="main" class="ui-content">
 	<img src="/resources/images/sample_icon.jpg" width="100px" height="100px">
 	<h2>작성 완료</h2>
-	<a href="/" class="ui-btn ui-btn-inline " > 내가 쓴 게시글 보러 가기 </a><br>
-	<a href="/" class="ui-btn ui-btn-inline " > 해당 카테고리 보러 가기 </a>
+	<a data-ajax=false href="/" class="ui-btn ui-btn-inline " > 내가 쓴 게시글 보러 가기 </a><br>
+	<a data-ajax=false href="/" class="ui-btn ui-btn-inline " > 해당 카테고리 보러 가기 </a>
 </div><!-- main끝 -->
 </div><!-- page끝 -->
 
