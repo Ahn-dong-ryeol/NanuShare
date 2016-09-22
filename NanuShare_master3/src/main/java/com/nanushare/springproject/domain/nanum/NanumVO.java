@@ -1,5 +1,6 @@
 package com.nanushare.springproject.domain.nanum;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class NanumVO {
@@ -18,12 +19,13 @@ public class NanumVO {
 	private String nanumWriter;
 	private String nanumMethod;
 	private String nanumStroyTitle;
+	private String[] files;
 	
 	public NanumVO(){}
 
 	public NanumVO(int nanumId, String nanumDelibery, String nanumTitle, String nanumContent, Date nanumDate,
 			int nanumChoiceNum, String nanumEndDate, String nanumState, String nanumDeleteCheck, int nanumHits,
-			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle) {
+			int nanumCategoryId, String nanumWriter, String nanumMethod, String nanumStroyTitle, String[] files) {
 		super();
 		this.nanumId = nanumId;
 		this.nanumDelibery = nanumDelibery;
@@ -39,6 +41,7 @@ public class NanumVO {
 		this.nanumWriter = nanumWriter;
 		this.nanumMethod = nanumMethod;
 		this.nanumStroyTitle = nanumStroyTitle;
+		this.files = files;
 	}
 
 	public int getNanumId() {
@@ -153,6 +156,14 @@ public class NanumVO {
 		this.nanumStroyTitle = nanumStroyTitle;
 	}
 
+	public String[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+
 	@Override
 	public String toString() {
 		return "NanumVO [nanumId=" + nanumId + ", nanumDelibery=" + nanumDelibery + ", nanumTitle=" + nanumTitle
@@ -160,10 +171,7 @@ public class NanumVO {
 				+ ", nanumEndDate=" + nanumEndDate + ", nanumState=" + nanumState + ", nanumDeleteCheck="
 				+ nanumDeleteCheck + ", nanumHits=" + nanumHits + ", nanumCategoryId=" + nanumCategoryId
 				+ ", nanumWriter=" + nanumWriter + ", nanumMethod=" + nanumMethod + ", nanumStroyTitle="
-				+ nanumStroyTitle + "]";
+				+ nanumStroyTitle + ", files=" + Arrays.toString(files) + "]";
 	}
-
-	
-	
 
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.http.MediaType;
 /*
  * 확장자로 이미지 타입 확인해 주는 클래스
- * (브라우저에서 파일을 다운로드 할 것인지, 보여줄 것인지를 결정하기 위해서
+ * (브라우저에서 파일을 다운로드 할 것인지, 보여줄 것인지를 결정하기 위해서)
  * */
 public class MediaUtils{
 	private static Map<String, MediaType> mediaMap;
