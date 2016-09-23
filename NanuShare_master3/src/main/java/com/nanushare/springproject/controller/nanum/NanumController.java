@@ -1,14 +1,20 @@
 package com.nanushare.springproject.controller.nanum;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.nanushare.springproject.domain.image.ImgVO;
 import com.nanushare.springproject.domain.nanum.NanumVO;
 import com.nanushare.springproject.service.nanum.NanumService;
 
@@ -21,30 +27,20 @@ public class NanumController {
 	NanumService nanumService;
 	
 	//나눔글 작성 페이지 이동
-	@RequestMapping(value="/nanumWrite", method=RequestMethod.GET)//수정 
-	public void nanumWrite(){
+	@RequestMapping(value="/nanumRegister", method=RequestMethod.GET)//수정 
+	public void nanumRegister(){
 	}
 	
 	//나눔글 작성 처리
-	@RequestMapping(value="/nanumWrite", method=RequestMethod.POST)//수정 
-	public String nanumWrite(NanumVO nanumVO) throws Exception{
-		//테스트용 데이터 입력
-		System.out.println("1. 테스트용 데이터 삽입!");
-		nanumVO.setNanumId(1);
-		nanumVO.setNanumDelibery("택배");
-		nanumVO.setNanumTitle("나눔할게요~");
-		nanumVO.setNanumContent("나눔한당");
-		nanumVO.setNanumChoiceNum(2);
-		nanumVO.setNanumEndDate( "2016-08-12");
-		nanumVO.setNanumState("나눔중");
-		nanumVO.setNanumDeleteCheck("Y");
-		//nanumVO.setNanumHits(0); //Mapper에서 0
-		nanumVO.setNanumCategoryId(11);
-		nanumVO.setNanumWriter("test");
-		nanumVO.setNanumMethod("랜덤");
+	@RequestMapping(value="/nanumRegister", method=RequestMethod.POST)//수정 
+	public String nanumRegister(@ModelAttribute("nanumVO") NanumVO nanumVO, 
+								@ModelAttribute("imgList")List<ImgVO> imgList) throws Exception{
+		// 이미지 정보 리스트를 받아서, 저장
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("list", imgList);
 		
-		nanumService.nanumInsert(nanumVO);
-		System.out.println("4. 삽입완료");
+		nanumService.nanumRegister(nanumVO, paramMap);
+		
 		
 		return "/nanum/nanumfinish";//나눔글 목록 이동으로 수정.
 	}

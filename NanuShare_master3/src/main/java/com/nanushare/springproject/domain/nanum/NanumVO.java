@@ -1,6 +1,5 @@
 package com.nanushare.springproject.domain.nanum;
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class NanumVO {
@@ -19,8 +18,9 @@ public class NanumVO {
 	private String nanumWriter;
 	private String nanumMethod;
 	private String nanumStroyTitle;
-	private String[] files;
 	private int nanumLikeCnt;
+	
+	private String[] files;
 	
 	public NanumVO(){}
 

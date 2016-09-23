@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false" %>
 <!DOCTYPE html>
+
 <html>
 <head>
    <title>Home</title>
@@ -37,33 +38,40 @@
 		border-collapse : collapse;
 	}
 
+/* 염지가 추가 */
+.fileDrop {width:100%; height:200px; border: 1px dotted blue;}
+
 </style>
 
 <script>
-function onSuccess($imageData){
-	$('#camera-image').
-		css({'background-image':'url('+$imageData + ')',
-			'background-size':'100%', 'background-repeat':'no-repeat'});
-}
-function onFail($message){
-	navigator.notification.alert('Fail...'+$message);
-}
-function getPictureFromCamera(){
-	navigator.camera.getPicture(onSuccess,onFail,
-			{quality:50,
-			 destinationType:navigator.camera.DestinationType.FILE_URI,
-			 sourceType:navigator.camera.PictureSourceType.CAMERA} );
-}
-function getPictureFromAlbum(){
-	navigator.camera.getPicture(onSuccess, onFail,
-			{quality:50,
-			 destinationType:navigator.camera.DestinationType.FILE_URI,
-			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY} );
-}
-function addForm() {
-	var form = $("#teleForm");
-	$("#demo").html(form.html());
-}
+	function onSuccess($imageData) {
+		$('#camera-image').css({
+			'background-image' : 'url(' + $imageData + ')',
+			'background-size' : '100%',
+			'background-repeat' : 'no-repeat'
+		});
+	}
+	function onFail($message) {
+		navigator.notification.alert('Fail...' + $message);
+	}
+	function getPictureFromCamera() {
+		navigator.camera.getPicture(onSuccess, onFail, {
+			quality : 50,
+			destinationType : navigator.camera.DestinationType.FILE_URI,
+			sourceType : navigator.camera.PictureSourceType.CAMERA
+		});
+	}
+	function getPictureFromAlbum() {
+		navigator.camera.getPicture(onSuccess, onFail, {
+			quality : 50,
+			destinationType : navigator.camera.DestinationType.FILE_URI,
+			sourceType : navigator.camera.PictureSourceType.PHOTOLIBRARY
+		});
+	}
+	function addForm() {
+		var form = $("#teleForm");
+		$("#demo").html(form.html());
+	}
 </script>
 
 </head>
@@ -141,15 +149,54 @@ function addForm() {
 <h1><a data-ajax=false href="/">Nanushare</a></h1>
 <a data-ajax=false href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
+
 <div data-role="main" class="ui-content">
 <a data-ajax=false href="#" class="ui-btn ui-btn-inline ui-mini" data-rel="back"> << </a>
 사진 등록
 <a data-ajax=false href="#nanum4" class="ui-btn ui-btn-inline ui-mini"> >> </a>
-<div id="camera-image" class="ui-body ui-body-b" style="background-size:100%;min-height:330px;">
-   </div>
+
+<!-- <div id="camera-image" class="ui-body ui-body-b" style="background-size:100%; min-height:330px;"> </div>-->
+
+	<div class='fileDrop'></div>
+	<div class='uploadedList'></div>
+	
+	<script>
+		//이미지 서버 업로드 관련
+		
+		$(".fileDrop").on("dragenter dragover", function(event) {
+			event.preventDefault();
+		});
+		
+		$(".fileDrop").on("drop", function(event) {
+			event.preventDefault();
+		
+			var files = event.originalEvent.dataTransfer.files;
+		
+			var file = files[0];
+		
+			//console.log(file);
+			
+			var formData = new FormData();
+			formData.append("file", file);
+			
+			$.ajax({
+				url:'/image/uploadAjax',
+				data:formData,
+				dataType:'text',
+				processData: false,
+				contentType: false,
+				type: 'POST',
+				success: function(data){
+					alert(data);
+				}
+			});
+		
+		});
+	</script>
+
   <fieldset class="ui-grid-a">
  <div class="ui-block-a">
-      <button type="button" data-icon="plus" onClick=" getPictureFromCamera();">
+      <button type="button" data-icon="plus" onClick="getPictureFromCamera();">
       	카메라
       </button>
  </div>

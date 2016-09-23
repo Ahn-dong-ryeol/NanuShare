@@ -1,8 +1,11 @@
 package com.nanushare.springproject.service.nanum;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.nanushare.springproject.domain.nanum.NanumVO;
 import com.nanushare.springproject.repository.nanum.NanumRepository;
@@ -13,19 +16,12 @@ public class NanumServiceImpl implements NanumService {
 	@Inject
 	private NanumRepository nanumRepository;
 	
-	/*@Autowired
-	NanumRepository nanumRepository;*/
-	
-	//나눔글 작성 처리
-	public void nanumInsert(NanumVO nanumVO)throws Exception {
-		System.out.println("2. NanumService 진입"+nanumVO.getNanumTitle());
-		int resultId = nanumRepository.nanumInsert(nanumVO);
-		if((Integer)resultId == null){
-			System.out.println("3. insert된 ID 안넘어옴!"+ resultId);
-		}else{ 
-			System.out.println("3. insert된 ID: "+resultId);
-		}
-		
+	//나눔글 작성 처리 
+	@Transactional
+	@Override
+	public void nanumRegister(NanumVO nanumVO, Map<String, Object> map) throws Exception {
+		 nanumRepository.insertNanum(nanumVO);
+		 nanumRepository.addNanumImgAttach(map);
 	}
 
 	// 좋아요
@@ -33,6 +29,8 @@ public class NanumServiceImpl implements NanumService {
 	public void updateLikeCnt(Integer nanumId, int amount) throws Exception {
 		nanumRepository.updateLikeCnt(nanumId, amount);
 	}
+
+
 
 	
 

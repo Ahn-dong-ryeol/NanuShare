@@ -20,17 +20,13 @@ public class NanumRepositoryImpl implements NanumRepository{
 	private static final String namespace = "com.nanushare.springproject.repository.nanum.NanumRepository";
 	
 	@Override
-	public int nanumInsert(NanumVO nanumVO) {
+	public void insertNanum(NanumVO nanumVO) {
 		sqlSession.insert(namespace+".nanumInsert",nanumVO);
-		return 0;
 	}
 
 	@Override
-	public void addAttach(String fullName, int nanumId) throws Exception {
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("fullName", fullName);
-		paramMap.put("nanumId", nanumId);
-		sqlSession.insert(namespace+".addAttach", paramMap);
+	public void addNanumImgAttach(Map<String, Object> map) throws Exception{
+		sqlSession.insert(namespace+".addNanumImgAttach", map);
 	}
 	
 	@Override

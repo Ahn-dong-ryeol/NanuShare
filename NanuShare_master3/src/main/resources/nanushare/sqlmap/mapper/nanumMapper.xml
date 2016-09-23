@@ -23,10 +23,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id="nanumInsert" parameterType="com.nanushare.springproject.domain.nanum.NanumVO" useGeneratedKeys="true" keyProperty="id">
-		insert into NANUSHARE_TB 
+		<selectKey keyProperty="nanumId" resultType="int" order="BEFORE">
+			select LAST_INSERT_ID()
+		</selectKey>
+		insert into NANUSHARE_TB
 		values(#{nanumId},#{nanumDelibery},#{nanumTitle},#{nanumContent},NOW(),
 				#{nanumChoiceNum},#{nanumEndDate},#{nanumState},#{nanumDeleteCheck},0,#{nanumCategoryId},
-				#{nanumWriter},#{nanumMethod},#{nanumStroyTitle});
+				#{nanumWriter},#{nanumMethod},#{nanumStroyTitle},0);
+	</insert>
+	
+	<insert id="addNanumImgAttach" parameterType="java.util.List">
+		insert into IMAGE_TB(img_id, img_filesize, img_save_date, img_file_extension, img_identifier, img_type) values
+		<foreach collection="list" item="item" index="index" separator=","> 
+			(#{item.imgId},0.0, NOW(), #{item.imgFileExtension}, LAST_INSERT_ID(), "na")
+		</foreach>				
 	</insert>
 	
 	<select id="listSearch" resultType="com.nanushare.springproject.domain.nanum.NanumVO" resultMap="nanumMap">
@@ -46,10 +56,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			order by na_write_date desc
 		]]>
 	</select>
-	
-	<insert id="addAttch" >
-		insert into IMAGE_TB(img_id, img_save_date, img_identifier) values(#{fullName},NOW(),#{nanumId});
-	</insert>
 	
 	<select id="subcateListSearch" resultMap="nanumMap">
 		select *
