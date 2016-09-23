@@ -19,34 +19,42 @@
 <a href="#info" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
 </div><!-- header끝 -->
 <div data-role="content">
-<!-- Slideshow -->
-  <div class="w3-display-container mySlides">
-    <img src="./resources/images/sample.jpg" style="width:100%">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img src="./resources/images/sample2.jpg" style="width:100%">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img src="./resources/images/sample.jpg" style="width:100%">
-  </div>
-  <!-- Slideshow next/previous buttons -->
-  <div class="w3-container w3-dark-grey w3-padding-8 w3-xlarge">
-    <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-    <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-    
-    <div class="w3-center">
-      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-    </div>
-  </div>
+<form class="ui-filterable">
+  <input id="myFilter" data-type="search" placeholder="Search..">
+</form>
+<div class="ui-grid-b"data-filter="true" data-input="#myFilter">
+      <div class="ui-block-a"><a href="<c:url value='/Nanum.do?action=list1'/>">
+      <img src="/resources/images/sample_icon.jpg" alt="furniture_icon" width="80" height="80"/>
+      <p >스마트폰</p></a>
+      </div>
+      <div class="ui-block-b"><a href="<c:url value='/Nanum.do?action=list2'/>">
+      <img alt="clothes_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
+      <p>PC</p></a>
+      </div>
+      <div class="ui-block-c"><a href="<c:url value='/Nanum.do?action=list3'/>">
+      <img alt="baby_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
+      <p>주변기기</p></a>
+      </div>
+      <div class="ui-block-a"><a href="<c:url value='/Nanum.do?action=list4'/>">
+      <img alt="IT_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
+      <p>카메라</p></a>
+      </div>
+      <div class="ui-block-b"><a href="<c:url value='/Nanum.do?action=list5'/>">
+      <img alt="gifticon_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
+      <p>음향기기</p></a>
+      </div>
+      <div class="ui-block-c"><a href="<c:url value='/Nanum.do?action=list6'/>">
+      <img alt="etc_icon" src="/resources/images/sample_icon.jpg" width="80" height="80"/>
+      <p>기타</p></a>
+      </div>
+</div><!-- grid끝 -->
 
 <c:forEach var="nanum" items="${lists}">
 <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <img src="./resources/images/profile.jpg" alt="profile" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
         <h4>${nanum.writer}</h4>
-        <span class="w3-right w3-badge w3-blue">${nanum.choice_num}</span><span class="w3-right w3-badge w3-teal">${nanum.method}</span><span class="w3-right w3-badge w3-lime">${nanum.delivery}</span>
+        <span class="w3-right w3-badge w3-blue">${nanum.choice_num}명</span><span class="w3-right w3-badge w3-teal">${nanum.method}</span><span class="w3-right w3-badge w3-lime">${nanum.delivery}</span>
         <br>
         <hr class="w3-clear">
         <img src="./resources/images/sample.jpg" style="width:100%" class="w3-margin-bottom">
@@ -58,7 +66,7 @@
         <div class="ui-grid-b">
       <div class="ui-block-a w3-center" style="border-right:1px solid grey;">
         <a href="#"><i class="fa fa-heart" style="font-size:38px;color:red;"></i></a><br>
-        <span>${nunum.like_cnt}</span>
+        <span>${nanum.like_cnt}</span>
       </div>
       <div class="ui-block-b w3-center" style="border-right:1px solid grey;">
         <a href="#"><i class="fa fa-pencil" style="font-size:38px;color:grey;"></i></a><br>
@@ -71,7 +79,7 @@
     </div>
       </div>
       </c:forEach>
-      
+
       <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
         <img src="./resources/images/profile.jpg" alt="profile" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
@@ -104,40 +112,14 @@
 <div data-role="footer" data-position="fixed" class="w3-footer-list">
       <div data-role="navbar">
        <ul>
-         <li><a data-ajax=false href="#anylink">Home</a></li>
-         <li><a data-ajax=false href="#anylink">Search</a></li>
-         <li><a data-ajax=false href="/view/nanum">Nanum</a></li>
-         <li><a data-ajax=false href="#anylink">Review</a></li>
-         <li><a data-ajax=false href="#anylink">Mypage</a></li>
+         <li><a href="#anylink">Home</a></li>
+         <li><a href="#anylink">Search</a></li>
+         <li><a href="/view/nanum">Nanum</a></li>
+         <li><a href="#anylink">Review</a></li>
+         <li><a href="#anylink">Mypage</a></li>
        </ul>
         </div>
    </div><!-- footer끝 -->
 </div><!-- page끝 -->
-<script>
-// Slideshow script
-var slideIndex = 1;
-showDivs(slideIndex);
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demodots");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
 </body>
 </html>
